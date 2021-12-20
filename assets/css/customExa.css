@@ -1,0 +1,248 @@
+.fira-font {
+    font-family: 'Fira Sans', sans-serif;
+}
+
+.logo {
+    padding: 0 0 0px;
+    margin-right: 0px;
+}
+
+.search-bar-header {
+    width: 100%;
+    font-size: 12px;
+}
+
+#topnav .navigation-menu>li>a {
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 13px;
+    font-family: 'Fira Sans', sans-serif;
+}
+
+#topnav .navigation-menu>li .submenu li a {
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 12px;
+}
+
+.text-muted {
+    color: #0b0b0b !important;
+}
+
+.btn-header-exa {
+    border-bottom: 5px solid #ff5282 !important;
+}
+
+.feature-posts-placeholder {
+    position: absolute;
+    height: 100%;
+}
+
+.bg-blue {
+    background: #334366 !important;
+}
+
+.footer {
+    border-top: 5px solid #ff5282 !important;
+    background: #F2F2F2;
+    position: relative;
+    color: #000 !important;
+}
+
+.small-news a {
+    line-height: 130%;
+    font-size: 14px;
+}
+
+.small-news small {
+    line-height: 120%;
+    font-size: 12px;
+}
+
+.footer .footer-head {
+    letter-spacing: 1px;
+    font-weight: 500;
+    color: #000;
+}
+
+.footer .text-foot {
+    color: #000;
+}
+
+.card-img, .card-img-top {
+    border-radius: 0px;
+}
+
+.homeGrid h1 {
+    margin: 10px 0px;
+    padding: 0px;
+    font-size: 20px !important;
+}
+
+.homeGrid p {
+
+    font-size: 14px !important;
+    line-height: 125% !important;
+}
+
+.section {
+    padding: 22px 0;
+    position: relative;
+}
+
+.homeValue {
+    color: #fff !important;
+
+}
+
+a {
+    color: #AA043B;
+}
+
+.footer a:hover {
+    color: #A90836 !important;
+    font-weight: bold;
+}
+
+.text-foot {
+    font-size: 14px;
+    ;
+}
+
+.footer .footer-list li {
+    margin-bottom: 4px;
+}
+
+.cms img {
+    max-width: 100% !important;
+}
+
+.homeValue p {
+    line-height: 1.4;
+    font-size: 14px;
+    text-align: justify;
+}
+
+.h1Title {
+    font-size: 24px !important;
+    ;
+}
+
+.wrapper-sm {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.noBanner {
+    margin-top: 100px;
+}
+
+.modalVideo {
+    position: fixed !important;
+}
+
+.ulwidget li {
+    float: left;
+    width: 50%;
+    margin-bottom: 10px;
+}
+
+.ulwidget li div {
+    width: 90%;
+}
+
+@media only screen and (max-width: 600px) {
+    .ulwidget li {
+        float: left;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+.homeGridImg{
+    height: 196px;
+}
+@media only screen and (max-width: 600px) {
+    .homeGridImg{
+        height: auto;
+    }
+}
+.bg-info {
+    background-color: #1E82A0 !important;
+}
+
+
+.footerRight {
+    text-align: right !important;
+}
+
+.text-white {
+    color: #fff !important;
+}
+
+.footerRight small {
+    font-size: 12px;
+}
+
+.footerRight .ficons {
+    padding: 5px 10px;
+    display: inline-block; 
+    margin-bottom: 5px;
+}
+
+
+.style01 {
+    position: relative;
+    display: block;
+    transition: transform .2s;
+    /* Animation */
+}
+
+.fa-red {
+    color: #FF0000;
+}
+
+.style01 .style01-01 {
+    position: absolute;
+    width: 100%;
+    top: 45px;
+    text-align: center;
+
+
+}
+
+.style01:hover .style01-01 {
+    transform: scale(1.5);
+    /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+iframe {
+    height: 448px;
+}
+
+
+.style02 {
+    position: relative;
+    display: block;
+    transition: transform .2s;
+    /* Animation */
+}
+
+.fa-red {
+    color: #FF0000;
+}
+
+.style02 .style02-01 {
+    position: absolute;
+    width: 100%;
+    top: 40%;
+    text-align: center;
+
+
+}
+ 
+.style02:hover .style02-01 {
+    transform: scale(1.5);
+}
+ 
+.style02:hover .bgnhover {
+    opacity: 0.8;
+}
