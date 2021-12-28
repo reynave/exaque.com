@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 ?>
-<section class="bg-half-170 d-table w-100 bg-home d-flex align-items-center" style="background: url('<?php echo $custom['productBanner'][0]['img']; ?>') center center; height: auto;" id="home">
+<section class="d-table w-100 bg-home d-flex align-items-center" style="background: url('<?php echo $custom['productBanner'][0]['img']; ?>') center center; height: auto;" id="home">
     <div class="bg-overlay bg-overlay-white"></div>
     <div class="container">
         <div class="row justify-content-center">
@@ -22,6 +22,16 @@ defined('BASEPATH') or exit('No direct script access allowed');
     <!--end container-->
 </section>
 
+<!--end section-->
+<div class="position-relative">
+    <div class="shape overflow-hidden text-white">
+        <svg viewBox="0 0 2880 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 48H1437.5H2880V0H2160C1442.5 52 720 0 720 0H0V48Z" fill="currentColor"></path>
+        </svg>
+    </div>
+</div>
+
+ 
 
 
 
@@ -41,7 +51,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
                         <div class="section-title">
                             <h4 class="title mb-4 fnText" <?php echo $row['data']['h1'] ?>><?php echo $row['h1'] ?></h4>
-                            <p class="text-muted fnText" <?php echo $row['data']['content'] ?>><?php echo $row['content'] ?></p>
+                            <div class="text-muted fnText" <?php echo $row['data']['content'] ?>><?php echo $row['content'] ?></div>
                             <a href="<?php echo $row['href'] ?>" class="btn btn-primary mt-3">Baca Selengkapnya</a>
                             <div> <?php echo $row['modal'] ?></div>
                         </div>

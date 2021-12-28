@@ -21,13 +21,14 @@ defined('BASEPATH') or exit('No direct script access allowed');
 </section>
 
 <section class="section bg-light">
-    <?php $row = $custom['solusiTitle'][0]; ?>
+    <?php $row = $core['content']; ?>
     <div class="container my-2">
         <div class="row align-items-center">
             <div class="col-12">
                 <div class="ms-lg-4">
                     <div class="section-title text-center">
-                        <h5 class="text-muted fnText" <?php echo $row['data']['content'] ?>><?php echo $row['content'] ?></h5>
+                        <div class="text-muted fnRichtext" <?php echo $row['data']['content'] ?>><?php echo $row['content'] ?></div>
+                        <div> <?php echo !$row['id'] ? $row['insert'] : $row['edit']; ?></div>
                     </div>
                 </div>
             </div>
@@ -36,29 +37,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
 </section>
 
 
-<section class="section ">
-    <?php $row = $core['content']; ?>
-    <div class="container my-5">
-        <div class="row align-items-center">
-            <div class="col-12">
-                <div class="ms-lg-4">
-                    <div class="section-title">
-                        <h1 class="title mb-4 fnText text-primary" <?php echo $row['data']['name'] ?>><?php echo $row['name'] ?></h1>
-                        <div class="text-muted fnText" <?php echo $row['data']['content'] ?>><?php echo $row['content'] ?></div>
-                        <div> <?php echo !$row['id'] ? $row['insert'] : $row['edit']; ?></div>
-                    </div>
-                </div>
-            </div> 
-        </div>
-    </div>
-</section>
 
 <section class="section">
-    <div class="container my-3"> 
-        <div class="col-12">
-            <h1 class="title mb-4 fnText text-primary text-center" <?php echo $custom['solusi1Label']['attributes'] ?>><?php echo $custom['solusi1Label']['content'] ?></h1>
-        </div> 
-    </div>
+   
     <?php
     $i = 0;
     foreach ($custom['solusi1'] as $row) {

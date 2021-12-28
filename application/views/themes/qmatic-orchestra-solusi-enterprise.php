@@ -1,16 +1,15 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 ?>
-<section class="bg-half-170 d-table w-100 bg-home d-flex align-items-center" style="background: url('<?php echo $custom['qeBanner'][0]['img']; ?>') center center; height: auto;background-size: cover;" id="home">
-    
+<section class="bg-half-170 d-table w-100 bg-home d-flex align-items-center" style="background: url('<?php echo $custom['qeBanner'][0]['img']; ?>') center center; height: auto;background-size: cover;">
     <div class="container">
         <div class="row ">
-        <div class="col-md-9 mt-0  pt-0  ">
+            <div class="col-md-9 mt-0  pt-0  ">
                 <div class="ms-lg-4">
                     <div class="title-heading margin-top-100">
                         <h1 class="display-4 fw-bold mb-3 fnText text-white" <?php echo $custom['qeBanner'][0]['data']['h1']; ?>> <?php echo $custom['qeBanner'][0]['h1']; ?></h1>
                         <h3 class="fnText text-white" <?php echo $custom['qeBanner'][0]['data']['content']; ?>> <?php echo $custom['qeBanner'][0]['content']; ?></h3>
-                        <?php echo $custom['qeBanner'][0]['modal']; ?> 
+                        <?php echo $custom['qeBanner'][0]['modal']; ?>
                     </div>
                 </div>
             </div>
@@ -21,12 +20,22 @@ defined('BASEPATH') or exit('No direct script access allowed');
     <!--end container-->
 </section>
 
+<!--end section-->
+<div class="position-relative">
+    <div class="shape overflow-hidden text-white">
+        <svg viewBox="0 0 2880 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 48H1437.5H2880V0H2160C1442.5 52 720 0 720 0H0V48Z" fill="currentColor"></path>
+        </svg>
+    </div>
+</div>
+
+ 
 
 
 
 <section class="section ">
 
-    <div class="container my-3 py-5">
+    <div class="container mt-3 py-5">
         <div class="row align-items-center" id="">
             <div class="text-center col-md-6 col-12 order-1 order-md-2">
                 <img src="<?php echo $core['content']['img'] ?>" class="img-fluid" alt="Exaque -  <?php echo  $core['content']['name'] ?>">
@@ -48,14 +57,14 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 
 
-<section class="section ">
+<section class=" ">
     <?php $a = $custom['qeW1'][0]; ?>
-    <div class="container my-3 py-5">
+    <div class="container ">
         <div class="row align-items-center" id="">
-            <div class="text-center col-md-6 col-12 order-1 order-md-2">
+            <div class="text-center col-md-6 col-12  ">
                 <img src="<?php echo $a['img']; ?>" class="img-fluid" alt="Exaque -  <?php echo $a['h1']; ?>">
             </div>
-            <div class="col-md-6 mt-4 pt-2 mt-sm-0 pt-sm-0 col-12 order-2 order-md-1">
+            <div class="col-md-6 mt-4 pt-2 mt-sm-0 pt-sm-0 col-12  ">
                 <div class="ms-lg-4">
                     <div class="section-title">
                         <h4 class="title mb-4 fnText" <?php echo $a['data']['h1']; ?>><?php echo $a['h1']; ?></h4>
@@ -165,7 +174,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                             <?php echo $a['content']; ?>
                         </div>
                         <div>
-                            <?php echo $a['modal'];?>
+                            <?php echo $a['modal']; ?>
                         </div>
                     </div>
                 </div>
@@ -177,6 +186,203 @@ defined('BASEPATH') or exit('No direct script access allowed');
         </div>
     </div>
 </section>
+
+
+
+
+
+<?php $row = $custom['jjtm'][0]; ?>
+<section class="section bg-light py-5">
+    <div class="container">
+        <div class="row no-gutters">
+            <div class="col-12">
+                <h1 class="fnText " <?php echo $row['data']['h1']; ?>><?php echo $row['h1']; ?></h1>
+                <?php echo $row['modal']; ?>
+            </div>
+            <div class="col-md-3 col-12">
+                <img src="<?php echo $row['img']; ?>" width="100%" class="img-fluid">
+            </div>
+            <div class="col-md-9 col-12">
+                <div class="fnRichtext" <?php echo $row['data']['content']; ?>><?php echo $row['content']; ?></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<style>
+    .container h5.display-6 {
+        border-top: 3px solid #000;
+        border-bottom: 3px solid #000; 
+        margin-bottom: 10px;
+    }
+    .container:nth-child(1) h5.display-6{  border-color: #CD5674;  }
+    .container:nth-child(2) h5.display-6{  border-color: #A0BF03;  }
+    .container:nth-child(3) h5.display-6{  border-color: #4EBAF9;  }
+    .container:nth-child(4) h5.display-6{  border-color: #D5791F;  }
+    .container:nth-child(5) h5.display-6{  border-color: #a9023a;  }
+    .container:nth-child(6) h5.display-6{  border-color: #198754;  }
+    
+
+</style>
+
+<section class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 my-3">
+                <?php $row = $custom['ddat'][0]; ?>
+                <h1 class="fnText " <?php echo $row['data']['h1']; ?>><?php echo $row['h1']; ?></h1>
+                <div class="fnRichtext" <?php echo $row['data']['content']; ?>><?php echo $row['content']; ?></div>
+            </div>
+        </div>
+    </div>
+
+    <?php $row = $custom['ddat1'][0]; ?>
+    <div class="container mb-5" id="<?php echo url_title($row['h1']); ?>">
+        <div class="row">
+            <div class="col-12">
+
+                <h5 class="display-6 fnText" <?php echo $row['data']['h1']; ?>><?php echo $row['h1']; ?></h5>
+                <div class="fnRichtext" <?php echo $row['data']['content']; ?>><?php echo $row['content']; ?></div>
+            </div>
+
+            <div class="col-12">
+                <ul class="ulwidget ulwidget-hl-1">
+                    <?php foreach ($custom['ddat1w'] as $row) { ?>
+                        <li>
+                            <h5 class="fnText" <?php echo $row['data']['h1']; ?>><?php echo $row['h1']; ?></h5>
+                            <div class="fnRichtext" <?php echo $row['data']['content']; ?>><?php echo $row['content']; ?></div>
+                            <?php echo $row['modal']; ?>
+                        </li>
+                    <?php } ?>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+    <?php $row = $custom['ddat2'][0]; ?>
+    <div class="container mb-5" id="<?php echo url_title($row['h1']); ?>">
+        <div class="row">
+            <div class="col-12">
+
+                <h5 class="display-6 fnText" <?php echo $row['data']['h1']; ?>><?php echo $row['h1']; ?></h5>
+                <div class="fnRichtext" <?php echo $row['data']['content']; ?>><?php echo $row['content']; ?></div>
+            </div>
+
+            <div class="col-12">
+                <ul class="ulwidget ulwidget-hl-1">
+                    <?php foreach ($custom['ddat2w'] as $row) { ?>
+                        <li>
+                            <h5 class="fnText" <?php echo $row['data']['h1']; ?>><?php echo $row['h1']; ?></h5>
+                            <div class="fnRichtext" <?php echo $row['data']['content']; ?>><?php echo $row['content']; ?></div>
+                            <?php echo $row['modal']; ?>
+                        </li>
+                    <?php } ?>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+    <?php $row = $custom['ddat3'][0]; ?>
+    <div class="container mb-5" id="<?php echo url_title($row['h1']); ?>">
+        <div class="row">
+            <div class="col-12">
+
+                <h5 class="display-6 fnText" <?php echo $row['data']['h1']; ?>><?php echo $row['h1']; ?></h5>
+                <div class="fnRichtext" <?php echo $row['data']['content']; ?>><?php echo $row['content']; ?></div>
+            </div>
+
+            <div class="col-12">
+                <ul class="ulwidget ulwidget-hl-1">
+                    <?php foreach ($custom['ddat3w'] as $row) { ?>
+                        <li>
+                            <h5 class="fnText" <?php echo $row['data']['h1']; ?>><?php echo $row['h1']; ?></h5>
+                            <div class="fnRichtext" <?php echo $row['data']['content']; ?>><?php echo $row['content']; ?></div>
+                            <?php echo $row['modal']; ?>
+                        </li>
+                    <?php } ?>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <?php $row = $custom['ddat4'][0]; ?>
+    <div class="container mb-5" id="<?php echo url_title($row['h1']); ?>">
+        <div class="row">
+            <div class="col-12">
+
+                <h5 class="display-6 fnText" <?php echo $row['data']['h1']; ?>><?php echo $row['h1']; ?></h5>
+                <div class="fnRichtext" <?php echo $row['data']['content']; ?>><?php echo $row['content']; ?></div>
+            </div>
+
+            <div class="col-12">
+                <ul class="ulwidget ulwidget-hl-1">
+                    <?php foreach ($custom['ddat4w'] as $row) { ?>
+                        <li>
+                            <h5 class="fnText" <?php echo $row['data']['h1']; ?>><?php echo $row['h1']; ?></h5>
+                            <div class="fnRichtext" <?php echo $row['data']['content']; ?>><?php echo $row['content']; ?></div>
+                            <?php echo $row['modal']; ?>
+                        </li>
+                    <?php } ?>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+
+    <?php $row = $custom['ddat5'][0]; ?>
+    <div class="container mb-5" id="<?php echo url_title($row['h1']); ?>">
+        <div class="row">
+            <div class="col-12">
+
+                <h5 class="display-6 fnText" <?php echo $row['data']['h1']; ?>><?php echo $row['h1']; ?></h5>
+                <div class="fnRichtext" <?php echo $row['data']['content']; ?>><?php echo $row['content']; ?></div>
+            </div>
+
+            <div class="col-12">
+                <ul class="ulwidget ulwidget-hl-1">
+                    <?php foreach ($custom['ddat5w'] as $row) { ?>
+                        <li>
+                            <h5 class="fnText" <?php echo $row['data']['h1']; ?>><?php echo $row['h1']; ?></h5>
+                            <div class="fnRichtext" <?php echo $row['data']['content']; ?>><?php echo $row['content']; ?></div>
+                            <?php echo $row['modal']; ?>
+                        </li>
+                    <?php } ?>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+    <?php $row = $custom['ddat6'][0]; ?>
+    <div class="container mb-5" id="<?php echo url_title($row['h1']); ?>">
+        <div class="row">
+            <div class="col-12">
+
+                <h5 class="display-6 fnText" <?php echo $row['data']['h1']; ?>><?php echo $row['h1']; ?></h5>
+                <div class="fnRichtext" <?php echo $row['data']['content']; ?>><?php echo $row['content']; ?></div>
+            </div>
+
+            <div class="col-12">
+                <ul class="ulwidget ulwidget-hl-1">
+                    <?php foreach ($custom['ddat6w'] as $row) { ?>
+                        <li>
+                            <h5 class="fnText" <?php echo $row['data']['h1']; ?>><?php echo $row['h1']; ?></h5>
+                            <div class="fnRichtext" <?php echo $row['data']['content']; ?>><?php echo $row['content']; ?></div>
+                            <?php echo $row['modal']; ?>
+                        </li>
+                    <?php } ?>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+
 
 
 <!-- footer -->
@@ -203,7 +409,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                         </div>
 
                         <div class="col-12 col-md-3 text-center">
-                            <a href="<?php echo $r['href']; ?>" class="btn btn-sm btn-primary">Permohonan Demo</a>
+                            <a href="<?php echo $r['href']; ?>" class="btn btn-outline-primary">Permohonan Demo</a>
                         </div>
 
                     </div>

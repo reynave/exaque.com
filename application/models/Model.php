@@ -276,6 +276,31 @@ class Model extends CI_Model
           "qeW4Red" => $this->core->cms_widget('qeW4Red'),
           "qeW4Red2" => $this->core->cms_widget('qeW4Red2'),
 
+          "jjtm" => $this->core->cms_widget('jjtm'),
+
+
+          "ddat" => $this->core->cms_widget('ddat'),
+
+
+          "ddat1" => $this->core->cms_widget('ddat1'),
+          "ddat1w" => $this->core->cms_widget('ddat1w'),
+
+          "ddat2" => $this->core->cms_widget('ddat2'),
+          "ddat2w" => $this->core->cms_widget('ddat2w'),
+
+          "ddat3" => $this->core->cms_widget('ddat3'),
+          "ddat3w" => $this->core->cms_widget('ddat3w'),
+
+          "ddat4" => $this->core->cms_widget('ddat4'),
+          "ddat4w" => $this->core->cms_widget('ddat4w'),
+
+          "ddat5" => $this->core->cms_widget('ddat5'),
+          "ddat5w" => $this->core->cms_widget('ddat5w'),
+
+          "ddat6" => $this->core->cms_widget('ddat6'),
+          "ddat6w" => $this->core->cms_widget('ddat6w'),
+
+
           "qeFooter" => $this->core->cms_widget('qeFooter'),
         );
         return $data;

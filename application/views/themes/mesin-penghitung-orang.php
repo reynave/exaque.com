@@ -4,7 +4,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 <section class="bg-half-170 d-table w-100 text-white" style="background: url('<?php echo $custom['penghitungBanner'][0]['img']; ?>');background-size: cover;">
     <div class="container">
         <div class="row align-items-center">
-            <div class="col-lg-8 col-md-8">
+            <div class="col-12 col-md-7">
                 <div class="title-heading mt-4">
                     <h1 class="heading mb-3 fnText" <?php echo $custom['penghitungBanner'][0]['data']['h1']; ?>><?php echo $custom['penghitungBanner'][0]['h1']; ?></h1>
                     <h3 class="para-desc fnText" <?php echo $custom['penghitungBanner'][0]['data']['content']; ?>> <?php echo $custom['penghitungBanner'][0]['content']; ?></h3>
@@ -34,7 +34,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 
 <section class="section ">
-    <div class="container my-3 py-5 ">
+    <div class="container mt-3 pt-5 ">
         <div class="row align-items-center">
             <div class="col-12">
                 <div class="ms-lg-4">
@@ -43,17 +43,16 @@ defined('BASEPATH') or exit('No direct script access allowed');
                     </div>
                 </div>
             </div>
-            <div class="col-8">
+            <div class="col-md-8 col-12">
                 <div class="ms-lg-4">
-                    <div class="section-title">
-
+                    <div class="section-title"> 
                         <div class="text-muted fnRichtext" <?php echo $core['content']['data']['content'] ?>><?php echo $core['content']['content'] ?></div>
                         <div> <?php echo $core['content']['id'] ?  $core['content']['edit'] : $core['content']['insert']; ?></div>
                     </div>
                 </div>
             </div>
-            <div class="col-4">
-                <img src="<?php echo $core['content']['img'] ?>" alt="Exaque <?php echo $core['content']['name'] ?>" width="100%">
+            <div class="col-md-4 col-12">
+                <img src="<?php echo $core['content']['img'] ?>" class="img-fluid my-3"  alt="Exaque <?php echo $core['content']['name'] ?>" width="100%">
             </div>
             
         </div>
@@ -63,18 +62,20 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 
 <section class="section ">
-    <div class="container my-3 py-2">
+    <div class="container  py-2">
         <div class="row ">
             <?php foreach ($custom['penghitungHeader'] as $row) { ?>
                 <div class="col ">
                     <div class="ms-lg-4">
                         <div class="section-title">
-                            <img src="<?php echo $row['img'] ?>" width="100%" class="my-4">
+                            <div class="sth01">
+                                <img src="<?php echo $row['img'] ?>"  width="100%" class="my-3">
+                            </div>
                             <h5 class="text-center mb-4 fnText" <?php echo $row['data']['h1'] ?>><?php echo $row['h1'] ?></h5>
                             <div class="fnRichtext"  <?php echo $row['data']['content'] ?>> <?php echo $row['content'] ?> </div>
-                           <div class="text-center">
-                           <?php echo $row['modal'];?>
-                           </div>
+                            <div class="text-center">
+                                    <?php echo $row['modal'];?>
+                            </div>
                         </div>
                     </div>
                 </div>
