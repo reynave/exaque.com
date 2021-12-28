@@ -8,7 +8,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                 <div class="title-heading mt-4">
                     <h1 class="heading mb-3 fnText" <?php echo $custom['kesehatanBanner'][0]['data']['h1']; ?>><?php echo $custom['kesehatanBanner'][0]['h1']; ?></h1> 
                     <div class="mt-4 pt-2">
-                        <a href=" <?php echo $custom['kesehatanBanner'][0]['h4']; ?>" class="btn btn-primary m-1">Permohonan Demo</a>
+                        <a href="<?php echo $custom['kesehatanBanner'][0]['href']; ?>" class="btn btn-exa m-1">Permohonan Demo</a>
                         <?php echo $custom['kesehatanBanner'][0]['modal']; ?>
                     </div>
                 </div>

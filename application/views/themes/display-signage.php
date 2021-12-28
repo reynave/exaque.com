@@ -82,7 +82,7 @@ foreach ($custom['displayW1'] as $row) {
                         <div class="text-muted fnRichtext text-white" <?php echo $core['content']['data']['content'] ?>><?php echo $core['content']['content'] ?></div> 
 
                         <div class="mt-3">
-                            <a href="<?php echo $row['h4'] ?>" class="btn btn-light text-right"> Ingin tahu lebih banyak? Hubungi kami!</a>
+                            <a href="<?php echo $row['href'] ?>" class="btn btn-light text-right"> Ingin tahu lebih banyak? Hubungi kami!</a>
                         </div>
                         <div> <?php echo $core['content']['id'] ?  $core['content']['edit'] : $core['content']['insert']; ?></div>
                     </div>
@@ -113,7 +113,7 @@ foreach ($custom['displayW1'] as $row) {
                             <?php echo $r['modal']; ?>
                         </div> 
                         <div class="col-12 col-md-3 text-center">
-                            <a href="<?php echo $r['h4']; ?>" class="btn btn-sm btn-primary">Permohonan Demo</a>
+                            <a href="<?php echo $r['href']; ?>" class="btn btn-sm btn-primary">Permohonan Demo</a>
                         </div>
 
                     </div>

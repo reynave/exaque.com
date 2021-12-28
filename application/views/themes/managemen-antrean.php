@@ -115,7 +115,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                             <div class="fnRichtext" <?php echo $r['data']['content'] ?>>
                                 <?php echo $r['content'] ?>
                             </div>
-                            <a href="<?php echo $r['h4'] ?>" class="btn btn-lg <?php echo $i % 2 == 0 ? "text-white" : ""; ?>" > <?php echo $r['h3'] ?></a>
+                            <a href="<?php echo $r['href'] ?>" class="btn btn-lg <?php echo $i % 2 == 0 ? "text-white" : ""; ?>" > <?php echo $r['h3'] ?></a>
                             <?php echo $r['modal']; ?>
                         </div>
                     </div>
@@ -133,7 +133,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                                     <h3 class="fnText" <?php echo $r['data']['h1'] ?>> <?php echo $r['h1'] ?> </h3>
                                     <h5 class="fnText py-3 mb-5" <?php echo $r['data']['h1'] ?>> <?php echo $r['h1'] ?> </h5>
                                     <div> <?php echo $r['modal'] ?></div>
-                                    <a href="" class="btn btn-sm btn-primary">Baca Selengkapnya</a>
+                                    <a href="<?php echo $r['href'] ?>" class="btn btn-sm btn-primary">Baca Selengkapnya</a>
                                 </div>
                             </div>
                         </div>

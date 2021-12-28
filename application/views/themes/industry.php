@@ -2,15 +2,15 @@
 defined('BASEPATH') or exit('No direct script access allowed');
 ?>
 <!-- Hero Start --> 
-<section class="bg-half-170 d-table w-100 text-white" style="background: url('<?php echo $custom['industryBanner'][0]['img']; ?>');background-size: cover;">
+<section class="bg-half-170 d-table w-100 text-dark" style="background: url('<?php echo $custom['industryBanner'][0]['img']; ?>');background-size: cover;">
     <div class="container">
         <div class="row align-items-center">
-            <div class="col-lg-7 col-md-7">
+            <div class="col-lg-8 col-md-8">
                 <div class="title-heading mt-4">
                     <h1 class="heading mb-3 fnText" <?php echo $custom['industryBanner'][0]['data']['h1']; ?>><?php echo $custom['industryBanner'][0]['h1']; ?></h1>
                     <h3 class="para-desc fnText" <?php echo $custom['industryBanner'][0]['data']['content']; ?>> <?php echo $custom['industryBanner'][0]['content']; ?></h3>
                     <div class="mt-4 pt-2">
-                        <a href=" <?php echo $custom['industryBanner'][0]['h4']; ?>" class="btn btn-primary m-1">Permohonan Demo</a>
+                        <a href="<?php echo $custom['industryBanner'][0]['href']; ?>" class="btn btn-outline-primary m-1">Permohonan Demo</a>
                         <?php echo $custom['industryBanner'][0]['modal']; ?>
                     </div>
                 </div>
@@ -51,7 +51,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                         <div class="section-title">
                             <h4 class="title mb-4 fnText" <?php echo $row['data']['h1'] ?>><?php echo $row['h1'] ?></h4>
                             <p class="text-muted fnText" <?php echo $row['data']['content'] ?>><?php echo $row['content'] ?></p>
-                            <a href="<?php echo $row['h4'] ?>" class="btn btn-primary mt-3">Baca Selengkapnya</a>
+                            <a href="<?php echo $row['href'] ?>" class="btn btn-outline-primary mt-3">Baca Selengkapnya</a>
                             <div> <?php echo $row['modal'] ?></div>
                         </div>
                     </div>

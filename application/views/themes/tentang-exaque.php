@@ -2,7 +2,7 @@
 defined('BASEPATH') or exit('No direct script access allowed');
 ?>
 <!-- Hero Start -->
-<section class="bg-half-170 d-table w-100" style="background: url('<?php echo $custom['aboutBanner'][0]['img']; ?>');">
+<section class="bg-half-170 d-table w-100 " style="background: url('<?php echo $custom['aboutBanner'][0]['img']; ?>');">
 
     <div class="container">
         <div class="row mt-5 justify-content-center">
@@ -17,15 +17,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
         </div>
         <!--end row-->
 
-        <!-- <div class="position-breadcrumb">
-            <nav aria-label="breadcrumb" class="d-inline-block">
-                <ul class="breadcrumb bg-white rounded shadow mb-0 px-4 py-2">
-                    <li class="breadcrumb-item"><a href="index.html">Landrick</a></li>
-                    <li class="breadcrumb-item"><a href="#">Company</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Aboutus</li>
-                </ul>
-            </nav>
-        </div> -->
     </div>
     <!--end container-->
 </section>
@@ -41,22 +32,19 @@ defined('BASEPATH') or exit('No direct script access allowed');
     </div>
 </div>
 
-<section class="section">
+<section class="section bg-light">
     <div class="container">
         <div class="row align-items-center">
-            <div class="col-md-6">
-                <img src="<?php echo $core['content']['img'] ?>" class="img-fluid" alt="">
-            </div>
-            <!--end col-->
+
 
             <div class="col-md-6 mt-4 pt-2 mt-sm-0 pt-sm-0">
                 <div class="ms-lg-4">
-                    <div class="d-flex mb-4">
+                    <div class="d-flex ">
                         <span class="text-primary h1 mb-0"><span class="counter-value display-1 fw-bold" data-target="<?php echo date('Y') - 2000; ?>">0</span>+</span>
                         <span class="h6 align-self-end ms-2">Tahun <br> Pengalaman</span>
                     </div>
                     <div class="section-title">
-                        <h4 class="title mb-4 fnText" <?php echo $core['content']['data']['name'] ?>><?php echo $core['content']['name'] ?></h4>
+                        <h1 class="mb-4 fnText" <?php echo $core['content']['data']['name'] ?>><?php echo $core['content']['name'] ?></h1>
                         <div class="text-muted fnRichtext" <?php echo $core['content']['data']['content'] ?>><?php echo $core['content']['content'] ?></div>
                         <div>
                             <?php echo !$core['content']['id']  ? $core['content']['insert'] : $core['content']['edit']; ?>
@@ -64,7 +52,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
                     </div>
                 </div>
             </div>
-            <!--end col-->
+            <div class="col-md-6">
+                <img src="<?php echo $core['content']['img'] ?>" class="img-fluid" alt="">
+            </div>
         </div>
         <!--end row-->
     </div>

@@ -3,13 +3,13 @@ defined('BASEPATH') or exit('No direct script access allowed');
 ?>
 <!-- Hero Start -->
 <section class="bg-half-170 d-table w-100" style="background: url('<?php echo $custom['virtualBanner'][0]['img']; ?>');">
-    
+
     <div class="container">
         <div class="row mt-5 justify-content-center">
             <div class="col-lg-12 text-center">
                 <div class="pages-heading title-heading">
-                    <h1 class="text-dark  fnText" <?php echo $custom['virtualBanner'][0]['data']['h1']; ?>> <?php echo $custom['virtualBanner'][0]['h1']; ?> </h1> 
-                    <h3 class="fnText text-dark" <?php echo $custom['virtualBanner'][0]['data']['content']; ?>> <?php echo $custom['virtualBanner'][0]['content']; ?></h3> 
+                    <h1 class="text-dark  fnText" <?php echo $custom['virtualBanner'][0]['data']['h1']; ?>> <?php echo $custom['virtualBanner'][0]['h1']; ?> </h1>
+                    <h3 class="fnText text-dark" <?php echo $custom['virtualBanner'][0]['data']['content']; ?>> <?php echo $custom['virtualBanner'][0]['content']; ?></h3>
                     <?php echo $custom['virtualBanner'][0]['modal']; ?>
                 </div>
             </div>
@@ -65,7 +65,33 @@ defined('BASEPATH') or exit('No direct script access allowed');
                 </div>
 
                 <div class="col-12 col-md-6 order-1 order-md-1 text-center <?php echo $i % 2 == 1 ? "2" : "1" ?>">
-                    <img src="<?php echo $row['img']; ?>" width="90%">
+
+
+
+
+
+                    <?php if ($row['href'] != "") { ?>
+                        <div class="style02">
+
+
+                            <img src="<?php echo $row['img'] ?>" width="100%" class="img-fluid bgnhover" data-bs-toggle="modal" data-bs-target="#videopopup<?php echo $row['id'] ?>" class="rounded" width="100%" alt="exaque">
+
+                            <div class="style02-01" data-bs-toggle="modal" data-bs-target="#videopopup<?php echo $row['id'] ?>"><i class="fab fa-red fa-3x fa-youtube"></i> </div>
+                        </div>
+
+                        <div class="modal fade modalVideo iframeYoutube" data-id="<?php echo $row['id'] ?>" id="videopopup<?php echo $row['id'] ?>" tabindex="-1" aria-hidden="true">
+                            <div class="modal-dialog modal-lg" role="document">
+                                <div class="modal-content">
+                                    <iframe class="iframeYoutube" id="youbt_<?php echo $row['id'] ?>" src="<?php echo $row['href'] ?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    <?php } else {
+                    ?>
+                        <img src="<?php echo $row['img']; ?>" width="90%">
+                    <?php
+
+                    } ?>
                 </div>
             </div>
         </div>

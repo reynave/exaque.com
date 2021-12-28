@@ -1,6 +1,37 @@
 .fira-font {
     font-family: 'Fira Sans', sans-serif;
 }
+h1,h2,h3,h4{
+    font-family: 'Roboto', sans-serif;
+}
+
+.btn-exa{
+    border:3px solid #fff;
+    color: #fff;;
+}
+.btn-exa:hover{
+    border:3px solid #A9023A;
+    background: #A9023A !important;
+    color: #fff;;
+}
+
+
+
+.btn-exa2{
+    border:3px solid #999;
+    color: #333;;
+}
+.btn-exa2:hover{
+    border:3px solid #A9023A;
+    background: #A9023A !important;
+    color: #fff;;
+}
+
+
+.h1-xl{
+    font-size: 30px !important;
+    font-family: 'Roboto', sans-serif;
+}
 
 .logo {
     padding: 0 0 0px;
@@ -177,6 +208,13 @@ a {
 .text-white {
     color: #fff !important;
 }
+.dataTables_info{
+    display: none;
+}
+table.dataTable.no-footer {
+    border-bottom: 0px;
+}
+
 
 .footerRight small {
     font-size: 12px;
@@ -186,6 +224,11 @@ a {
     padding: 5px 10px;
     display: inline-block; 
     margin-bottom: 5px;
+ 
+}
+.footerRight .ficons a { 
+    color: #8f8e8e;
+ 
 }
 
 
@@ -246,3 +289,41 @@ iframe {
 .style02:hover .bgnhover {
     opacity: 0.8;
 }
+.blocklist a{
+    color: #000;
+}
+.blocklist{
+    padding: 10px 15px;
+    border-top: 3px solid #fff;
+    font-size: 14px;
+    position: relative;
+}
+
+.blocklist.active{
+    background-color: #dddddd;
+    font-weight: bold;
+}
+
+.blocklist .arrow1{
+    display: none;
+    position: absolute;
+    left: -10px;
+    top: 40%;
+}
+
+.blocklist.active .arrow1{
+     display: block !important; 
+     width: 0;
+     height: 0;
+     border-top: 5px solid transparent;
+     border-right: 10px solid #dddddd;
+     border-bottom: 5px solid transparent;
+}
+
+.btn-danger {
+    background-color: #a9023a !important;
+    border: 1px solid #a9023a !important;
+    color: #ffffff !important;
+    box-shadow: 0 3px 5px 0 rgb(228 63 82 / 10%);
+}
+ 

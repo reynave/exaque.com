@@ -87,7 +87,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                 <img src="<?php echo $a['img']; ?>" class="img-fluid" alt="Exaque -  <?php echo $a['h1']; ?>">
 
                 <div class="text-center mt-3">
-                    <a href="<?php echo $a['h4']; ?>" class="btn  btn-block btn-outline-primary"><?php echo $a['h3']; ?></a>
+                    <a href="<?php echo $a['href']; ?>" class="btn  btn-block btn-outline-primary"><?php echo $a['h3']; ?></a>
                 </div>
             </div>
             <div class="col-md-6 mt-4 pt-2 mt-sm-0 pt-sm-0 col-12 order-2 order-md-1">
@@ -115,7 +115,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                             <?php echo $a['content']; ?>
                         </div>
                         <div style="text-align: right;">
-                            <a href="<?php echo $a['h4']; ?>" class="btn btn-sm btn-primary text-right">Permohonan Demo Gratis</a>
+                            <a href="<?php echo $a['href']; ?>" class="btn btn-sm btn-primary text-right">Permohonan Demo Gratis</a>
                         </div>
                     </div>
 
@@ -203,7 +203,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                         </div>
 
                         <div class="col-12 col-md-3 text-center">
-                            <a href="<?php echo $r['h4']; ?>" class="btn btn-sm btn-primary">Permohonan Demo</a>
+                            <a href="<?php echo $r['href']; ?>" class="btn btn-sm btn-primary">Permohonan Demo</a>
                         </div>
 
                     </div>

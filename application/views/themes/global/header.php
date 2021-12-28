@@ -10,6 +10,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
   <?php echo $core['opengraph']; ?>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap');
   </style>
   <link href="<?php echo base_url(); ?>assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
   <!-- Icons -->
@@ -22,7 +23,10 @@ defined('BASEPATH') or exit('No direct script access allowed');
   <!-- Main Css -->
   <link href="<?php echo base_url(); ?>assets/css/style.css" rel="stylesheet" type="text/css" id="theme-opt" />
   <link href="<?php echo base_url(); ?>assets/css/colors/red.css" rel="stylesheet" id="color-opt">
+  <link href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css" rel="stylesheet">
+
   <link href="<?php echo base_url(); ?>assets/css/customExa.css" rel="stylesheet">
+
   <?php $this->load->view('admin/header'); ?>
 </head>
 
@@ -84,7 +88,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
               <?php if ($row['level2']) { ?>
                 <li class="has-submenu parent-menu-item">
-                  <a href="<?php echo $row['href'] ?>"><?php echo $row['name'] ?></a><span class="menu-arrow"></span>
+                  <a href="<?php echo $row['id'] == 4 || $row['id'] ==6  ? "javascript:;" :$row['href'] ?>"><?php echo $row['name'] ?></a><span class="menu-arrow"></span>
                   <ul class="submenu">
                     <?php foreach ($row['level2'] as $row2) { ?>
                       <li class="<?php if ($row2['level3']) { ?>has-submenu parent-menu-item <?php } ?>"><a target="<?php echo $row2['blank'] ?>" href="<?php echo $row2['href'] ?>" class="sub-menu-item"><?php echo $row2['name'] ?> <?php if ($row2['level3']) { ?><span class="submenu-arrow"></span><?php } ?></a>

@@ -64,7 +64,7 @@ if (typeof jQuery != 'undefined') {
             fnDelete();
             fnInsert();
             fnRouter();
-            fnUpdate();
+
             richEditor();
 
         }
@@ -277,39 +277,6 @@ function fnModal() {
         parent.postMessage(sendData, "*");
     });
 }
-
-function fnUpdate() {
-    $(".fnUpdate").on("change", function() {
-        if (!this.id) {
-            alert('Please add unique ID, example id="hahaha-123" ')
-        } else {
-            console.log($('#' + this.id).data());
-            post = {
-                data: $('#' + this.id).data(),
-                value: $('#' + this.id).val(),
-            }
-            console.log(post);
-            $.ajax({
-                url: base_url + "api/fnUpdate/",
-                data: post,
-                type: "POST",
-                dataType: "json",
-                beforeSend: function(e) {
-                    console.log('Updating..');
-                },
-                error: function(e) {
-                    console.log(e.responseText);
-                },
-                success: function(data) {
-                    console.log(data);
-                    console.log('success');
-                    location.reload();
-                },
-            });
-        }
-    });
-}
-
 
 function richEditor() {
 

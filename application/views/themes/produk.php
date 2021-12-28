@@ -42,7 +42,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                         <div class="section-title">
                             <h4 class="title mb-4 fnText" <?php echo $row['data']['h1'] ?>><?php echo $row['h1'] ?></h4>
                             <p class="text-muted fnText" <?php echo $row['data']['content'] ?>><?php echo $row['content'] ?></p>
-                            <a href="<?php echo $row['h4'] ?>" class="btn btn-primary mt-3">Baca Selengkapnya</a>
+                            <a href="<?php echo $row['href'] ?>" class="btn btn-primary mt-3">Baca Selengkapnya</a>
                             <div> <?php echo $row['modal'] ?></div>
                         </div>
                     </div>
@@ -70,7 +70,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                             <?php echo $r['modal']; ?>
                         </div> 
                         <div class="col-12 col-md-3 text-center">
-                            <a href="<?php echo $r['h4']; ?>" class="btn btn-sm btn-primary">Permohonan Demo</a>
+                            <a href="<?php echo $r['href']; ?>" class="btn btn-sm btn-primary">Permohonan Demo</a>
                         </div> 
                     </div>
                 <?php } ?>

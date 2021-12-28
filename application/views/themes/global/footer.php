@@ -12,7 +12,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                             <h5 class="footer-head fnText" <?php echo $footerLabelW1['attributes'] ?>><?php echo $footerLabelW1['content'] ?></h5>
                             <ul class="list-unstyled footer-list mt-2 mb-3">
                                 <?php foreach ($footerW1 as $row) { ?>
-                                    <li><a href="<?php echo $row['h4']; ?>" class="text-foot"><i class="uil uil-angle-right-b me-1"></i><?php echo $row['h1']; ?></a>
+                                    <li><a href="<?php echo $row['href']; ?>" class="text-foot"><i class="uil uil-angle-right-b me-1"></i><?php echo $row['h1']; ?></a>
                                         <div><?php echo $row['modal']; ?></div>
                                     </li>
                                 <?php } ?>
@@ -25,7 +25,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                             <h5 class="footer-head fnText" <?php echo $footerLabelW2['attributes'] ?>><?php echo $footerLabelW2['content'] ?></h5>
                             <ul class="list-unstyled footer-list mt-2 mb-3">
                                 <?php foreach ($footerW2 as $row) { ?>
-                                    <li><a href="<?php echo $row['h4']; ?>" class="text-foot"><i class="uil uil-angle-right-b me-1"></i><?php echo $row['h1']; ?></a>
+                                    <li><a href="<?php echo $row['href']; ?>" class="text-foot"><i class="uil uil-angle-right-b me-1"></i><?php echo $row['h1']; ?></a>
                                         <div><?php echo $row['modal']; ?></div>
                                     </li>
                                 <?php } ?>
@@ -37,7 +37,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                             <h5 class="footer-head fnText" <?php echo $footerLabelW3['attributes'] ?>><?php echo $footerLabelW3['content'] ?></h5>
                             <ul class="list-unstyled footer-list mt-2 mb-3">
                                 <?php foreach ($footerW3 as $row) { ?>
-                                    <li><a href="<?php echo $row['h4']; ?>" class="text-foot"><i class="uil uil-angle-right-b me-1"></i><?php echo $row['h1']; ?></a>
+                                    <li><a href="<?php echo $row['href']; ?>" class="text-foot"><i class="uil uil-angle-right-b me-1"></i><?php echo $row['h1']; ?></a>
                                         <div><?php echo $row['modal']; ?></div>
                                     </li>
                                 <?php } ?>
@@ -101,11 +101,18 @@ defined('BASEPATH') or exit('No direct script access allowed');
 <script src="<?php echo base_url(); ?>assets/js/app.js"></script>
 <!--Note: All important javascript like page loader, menu, sticky menu, menu-toggler, one page menu etc. -->
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="//cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css"></script>
+<script src="//cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+
 
 <?php $this->load->view('admin/footer'); ?>
 <script>
     $(document).ready(function() {
-
+        $('#example').DataTable({
+            lengthMenu: [4],
+            lengthChange: false, 
+            searching: false
+        });
         $('#commentFormSuccess').hide();
         $('.iframeYoutube').on('hidden.bs.modal', function() {
             var id = $(this).data('id');

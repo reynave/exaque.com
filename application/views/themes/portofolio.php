@@ -141,7 +141,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                                     <img src="<?php echo $r['img'] == "" ? "https://dummyimage.com/600x600/000/fff" : $r['img']; ?>" class="img-fluid" alt="<?php echo $r['img'] == "" ? "https://dummyimage.com/600x600/000/fff" : $r['img']; ?>">
                                 </a>
                                 <div class="content bg-white p-3">
-                                    <h5 class="mb-0"><a href="portfolio-detail-one.html" class="text-dark title"><?php echo $r['name'] ?></a></h5>
+                                    <h5 class="mb-0"><a href="<?php echo $r['href']; ?>" class="text-dark title"><?php echo $r['name'] ?></a></h5>
                                     <h6 class="text-muted tag mb-0"><?php echo $r['h1'] ?></h6>
                                     <?php echo $r['action'];?>
                                 </div>

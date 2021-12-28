@@ -28,9 +28,10 @@ $i = 0;
 foreach ($custom['koisBannerW1'] as $row) {
     $i++;
 ?>
+    <div id="kion<?php echo $row['id'] ?>"></div>
     <section class="section <?php echo $i % 2 == 0 ? "bg-light" : "" ?> ">
         <div class="container my-3 py-5">
-            <div class="row align-items-center" id="counter">
+            <div class="row align-items-center" >
                 <div class="text-center col-md-6 col-12 order-1 order-lg-<?php echo $i % 2 == 1 ? "1" : "2" ?>">
                     <img src="<?php echo $row['img'] ?>" style="max-width: 100%;" alt="exaque">
                 </div>

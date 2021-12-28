@@ -5,12 +5,12 @@ defined('BASEPATH') or exit('No direct script access allowed');
 <section class="bg-half-170 d-table w-100 text-white" style="background: url('<?php echo $custom['finansialBanner'][0]['img']; ?>');background-size: cover;">
     <div class="container">
         <div class="row align-items-center">
-            <div class="col-lg-7 col-md-7">
+            <div class="col-lg-9 col-12">
                 <div class="title-heading mt-4">
                     <h1 class="heading mb-3 fnText" <?php echo $custom['finansialBanner'][0]['data']['h1']; ?>><?php echo $custom['finansialBanner'][0]['h1']; ?></h1>
                     <h3 class="para-desc fnText" <?php echo $custom['finansialBanner'][0]['data']['content']; ?>> <?php echo $custom['finansialBanner'][0]['content']; ?></h3>
                     <div class="mt-4 pt-2">
-                        <a href=" <?php echo $custom['finansialBanner'][0]['h4']; ?>" class="btn btn-primary m-1">Permohonan Demo</a>
+                        <a href="<?php echo $custom['finansialBanner'][0]['href']; ?>" class="btn btn-exa btn6 m-1">Permohonan Demo</a>
                         <?php echo $custom['finansialBanner'][0]['modal']; ?>
                     </div>
                 </div>
@@ -82,9 +82,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
     ?>
         <div class="container my-4 ">
             <div class="row">
-                <div class="col-6 text-justify order-2 order-md-<?php echo $i % 2 == 1 ? "1" : "2" ?>">
-                    <h5 class="fnText" <?php echo $r['data']['h1']; ?>><?php echo $r['h1']; ?></h5>
-
+                <div class="col-6 text-justify order-2 order-md-<?php echo $i % 2 == 1 ? "1" : "2" ?>"> 
                     <div class="fnRichtext" <?php echo $r['data']['content']; ?>><?php echo $r['content']; ?> </div>
                     <?php echo $r['modal']; ?>
                 </div>

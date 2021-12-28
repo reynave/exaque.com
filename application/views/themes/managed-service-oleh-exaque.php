@@ -21,6 +21,16 @@ defined('BASEPATH') or exit('No direct script access allowed');
     <!--end container-->
 </section>
 
+<!--end section-->
+<div class="position-relative">
+    <div class="shape overflow-hidden text-white">
+        <svg viewBox="0 0 2880 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 48H1437.5H2880V0H2160C1442.5 52 720 0 720 0H0V48Z" fill="currentColor"></path>
+        </svg>
+    </div>
+</div>
+
+ 
 <?php $a = $custom['mw0'][0];?>
 <section class="section  mb-5">
     <div class="container  my-3 py-2 ">
@@ -31,7 +41,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                         <h1 class=" fnText" <?php echo $a['data']['h1'] ?>><?php echo $a['h1'] ?></h1> 
                         <h4 class="fnRichtext" <?php echo $a['data']['h2'] ?>><?php echo $a['h2'] ?></h4>
                         <div class="mt-4">
-                            <a href="<?php echo $a['h4'] ?>" class="btn btn-outline-primary"> Pelajari lebih lanjut sekarang!</a>
+                            <a href="<?php echo $a['href'] ?>" class="btn btn-outline-primary"> Pelajari lebih lanjut sekarang!</a>
                         </div>
                         <div> <?php echo $a['modal']; ?></div>
                     </div>
@@ -91,7 +101,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 
 <section class="section">
-    <div class="container my-3  py-5 ">
+    <div class="container  ">
         <div class="row align-items-center">
             <div class="col-12">
                 <div class="ms-lg-4">
@@ -108,7 +118,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
         <div class="row">
 
             <?php   foreach($custom['mw3'] as $row){ ?>
-            <div class="col-6 my-3">
+            <div class="col-6 my-1">
                 <div class="ms-lg-4">
                     <div class="row">
                         <div class="col-12 col-md-3"><img src="<?php echo $row['img']?>" width="100%"></div>
@@ -130,8 +140,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 
 <?php $a = $custom['mw4'][0];?>
-<section class="section  mb-5">
-    <div class="container my-3 py-5 bg-light ">
+<section class="section bg-light">
+    <div class="container  py-3">
         <div class="row align-items-center">
             <div class="col-md-6 col-12">
                 <div class="ms-lg-4">
@@ -141,7 +151,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                         <div>
                         <?php echo $a['modal']?>
                         </div>
-                        <a href="<?php echo $a['h2']?>" class="btn btn-outline-primary" ><?php echo $a['h2']?></a>
+                        <a href="<?php echo $a['href']?>" class="btn btn-outline-primary" ><?php echo $a['h2']?></a>
                     </div>
                 </div>
             </div>
@@ -156,38 +166,4 @@ defined('BASEPATH') or exit('No direct script access allowed');
         </div>
     </div>
 </section>
-
-
-<section class="section bg-light">
-
-    <div class="container my-3 ">
-        <div class="row no-gutters">
-            <div class="col-1">
-                <img src="<?php echo base_url() ?>assets/gif/hug.gif" width="100%">
-
-            </div>
-            <div class="col-11">
-                <?php foreach ($bodyFooter as $r) { ?>
-                    <div class="row">
-
-
-                        <div class="col-12 col-md-8">
-                            <h5 class="fnText" <?php echo $r['data']['h1']; ?>><?php echo $r['h1']; ?></h5>
-                        </div>
-                        <div class="col-12 col-md-9">
-                            <div class="fnRichtext" <?php echo $r['data']['content']; ?>><?php echo $r['content']; ?> </div>
-                            <?php echo $r['modal']; ?>
-                        </div>
-
-                        <div class="col-12 col-md-3 text-center">
-                            <a href="<?php echo $r['h4']; ?>" class="btn btn-sm btn-primary">Permohonan Demo</a>
-                        </div>
-
-                    </div>
-                <?php } ?>
-            </div>
-
-        </div>
-    </div>
-
-</section>
+ 

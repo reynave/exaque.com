@@ -21,9 +21,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
                 <div class="fnRichtext cms_content" <?php echo $core['content']['data']['content'] ?>><?php echo $core['content']['content'] ?> </div>
 
                 <?php if ($core['content']['id'] == '311') { ?>
-                    <div class="card shadow rounded border-0 mt-5 " id="commentForm">
+                    <div class="card shadow rounded border-0 mt-5 " id="commentForm2">
                         <div class="card-body py-5">
-                            <h4 class="card-title fnText" <?php echo $custom['hubTitleContent1']['attributes']; ?>> <?php echo $custom['hubTitleContent1']['content']; ?> </h4>
+                          
                             <div class="custom-form mt-3">
 
                                 <form <?php echo $core['contact_us']['action'] ?> name="myForm">
@@ -125,8 +125,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
                                     </div>
                                     <div class="row">
                                         <div class="col-12">
-                                            <div class="d-grid">
-                                                <button class="btn btn-danger fnSubmit" id="submit" name="send" type="button">Kirim Pesan</button>
+                                            <div class="text-center">
+                                                <button class="btn btn-exa2  fnSubmit" id="submit" name="send" type="button">Kirim Pesan</button>
                                             </div>
                                         </div>
                                         <!--end col-->
@@ -140,9 +140,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
                 <?php }
 
                 if ($core['content']['id'] == '310') { ?>
-                    <div class="card shadow rounded border-0 mt-5 " id="commentForm">
+                    <div class="card shadow rounded border-0 mt-5 " id="commentForm3">
                         <div class="card-body py-5">
-                            <h4 class="card-title fnText" <?php echo $custom['hubTitleContent1']['attributes']; ?>> <?php echo $custom['hubTitleContent1']['content']; ?> </h4>
+                           
                             <div class="custom-form mt-3">
 
                                 <form <?php echo $core['contact_us']['action'] ?> name="myForm">
@@ -274,15 +274,15 @@ defined('BASEPATH') or exit('No direct script access allowed');
                                                 <label for="how">Pesan</label>
                                                 <textarea class="form-control" id="how" rows="5" name="pesan" placeholder="Apa yang paling menarik untuk anda pelajari ?" required></textarea>
                                                 <div class="invalid-feedback" id="ehow">
-                                                    Pesan wajib isi!
+                                                    Jelaskan masalah Anda dan time teknis kami akan segera menghubungi Anda kembali
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-12">
-                                            <div class="d-grid">
-                                                <button class="btn btn-danger fnSubmit2" id="submit" name="send" type="button">Kirim Pesan</button>
+                                            <div class="text-center">
+                                                <button class="btn btn-exa2 fnSubmit2" id="submit" name="send" type="button">Kirim Pesan</button>
                                             </div>
                                         </div>
                                         <!--end col-->
@@ -304,18 +304,26 @@ defined('BASEPATH') or exit('No direct script access allowed');
             </div>
 
             <div class="col-lg-4 col-md-4 col-12">
-                <div class="sticky-bar bg-light rounded shadow border">
+                <div class="sticky-bar bg-light  ">
                     <div class="px-3 pt-3">
-                        <div class="fnText text-primary" <?php echo $custom['hubTitle']['attributes']; ?>> <?php echo $custom['hubTitle']['content']; ?> </div>
+                        <div class="fnText text-primary pb-2" <?php echo $custom['hubTitle']['attributes']; ?>> <?php echo $custom['hubTitle']['content']; ?> </div>
                     </div>
-                    <ul class="list-unstyled sidebar-nav mb-0 py-2 fnSortable" id="navmenu-nav">
-                        <?php foreach ($core['content']['list'] as $row) { ?>
-                            <li class="navbar-item"><a href="<?php echo $row['href'] ?>" class="navbar-link"><?php echo $row['name'] ?></a>
-                                <?php echo $row['action']; ?>
-                            </li>
-                        <?php } ?>
-                    </ul>
-                    <?php echo $core['content']['insert']; ?>
+                   
+
+                    <?php foreach ($core['content']['list'] as $row) { ?>
+                    <div class="blocklist <?php echo $row['id'] == $core['content']['id'] ? "active":""?>">
+                        <a href="<?php echo $row['href'] ?>"><?php echo $row['name'] ?></a>
+                        <div class="arrow1"> 
+                        </div>
+                        <?php echo $row['action']; ?>
+                    </div>
+                    <?php } ?>
+
+                  
+                </div>
+
+                <div>
+                <?php echo $core['content']['insert']; ?>
                 </div>
             </div>
         </div>

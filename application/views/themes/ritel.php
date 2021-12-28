@@ -10,7 +10,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                     <h1 class="heading mb-3 fnText" <?php echo $custom['ritelBanner'][0]['data']['h1']; ?>><?php echo $custom['ritelBanner'][0]['h1']; ?></h1>
                     <h3 class="para-desc fnText" <?php echo $custom['ritelBanner'][0]['data']['content']; ?>> <?php echo $custom['ritelBanner'][0]['content']; ?></h3>
                     <div class="mt-4 pt-2">
-                        <a href=" <?php echo $custom['ritelBanner'][0]['h4']; ?>" class="btn btn-primary m-1">Permohonan Demo</a>
+                        <a href=" <?php echo $custom['ritelBanner'][0]['href']; ?>" class="btn btn-exa m-1">Permohonan Demo</a>
                         <?php echo $custom['ritelBanner'][0]['modal']; ?>
                     </div>
                 </div>

@@ -10,20 +10,20 @@ defined('BASEPATH') or exit('No direct script access allowed');
             $i = 0;
             foreach ($custom['banner'] as $row) {
             ?>
-                <div class="carousel-item <?php echo $i == 0 ? "active" : "" ?>" data-bs-interval="3000">
+                <div class="carousel-item <?php echo $i == 0 ? "active" : "" ?>" data-bs-interval="5000">
                     <div class="bg-home-75vh d-flex align-items-center" style="background: url('<?php echo $row['img']; ?>') center center;">
                     
-                        <div class="container">
+                        <div class="container ">
                             <div class="row mt-5 justify-content-center">
                                 <div class="col-12">
                                     <div class="title-heading text-left">
-                                        <h2 class="text-white  mb-3 fnText" <?php echo $row['data']['h1']; ?>><?php echo $row['h1']; ?></h2>
+                                        <h2 class="<?php echo $row['h4'];?> mb-3 fnText" <?php echo $row['data']['h1']; ?>><?php echo $row['h1']; ?></h2>
 
-                                        <p class="para-desc text-white mb-0 fnText" <?php echo $row['data']['h2']; ?>><?php echo $row['h2']; ?></p>
+                                        <p class="para-desc <?php echo $row['h4'];?> mb-0 fnText" <?php echo $row['data']['h2']; ?>><?php echo $row['h2']; ?></p>
 
                                         <?php echo $row['modal']; ?>
                                         <div class="mt-4">
-                                            <a href="javascript:void(0)" class="btn btn-light">Baca Selengkapnya </a>
+                                            <a href="<?php echo $row['href']; ?>" class="btn btn-exa">Baca Selengkapnya </a>
                                         </div>
                                         <?php echo $custom['banner_action']; ?>
                                     </div>

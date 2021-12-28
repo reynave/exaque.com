@@ -110,7 +110,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 
                     <div class="my-3">
-                        <a href="<?php echo $row['h4']; ?>" class="btn btn-sm btn-primary"><?php echo $row['h3']; ?></a>
+                        <a href="<?php echo $row['href']; ?>" class="btn btn-sm btn-primary"><?php echo $row['h3']; ?></a>
                     </div>
 
                     <div>
