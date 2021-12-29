@@ -34,10 +34,18 @@ class Model extends CI_Model
       case "industry":
         $data = array(
           "industryBanner" => $this->core->cms_widget('industryBanner'),
-          "industry1" => $this->core->cms_widget('industry1'), 
+          "industry1" => $this->core->cms_widget('industry1'),
         );
         return $data;
         break;
+
+      case "tiket":
+        $data = array( 
+          "tiketW1" => $this->core->cms_widget('tiketW1'),
+        );
+        return $data;
+        break;
+
       case "solusi":
         $data = array(
           "solusiBanner" => $this->core->cms_widget('solusiBanner'),
@@ -100,7 +108,7 @@ class Model extends CI_Model
 
       case "managemen-antrean":
         $data = array(
-          "managemenAntreanBanner" => $this->core->cms_widget('industryBanner'),
+          "managemenAntreanBanner" => $this->core->cms_widget('managemenAntreanBanner'),
 
           "maText1" => $this->core->cms_label('maText1'),
           "maText2" => $this->core->cms_label('maText2'),
@@ -351,13 +359,13 @@ class Model extends CI_Model
         break;
 
 
-        case "hubungi-kami":
-          $data = [
-            "hubTitle" => $this->core->cms_label('hubTitle'),
-            "hubTitleContent1" => $this->core->cms_label('hubTitleContent1'),
-          ];
-          return $data;
-          break;
+      case "hubungi-kami":
+        $data = [
+          "hubTitle" => $this->core->cms_label('hubTitle'),
+          "hubTitleContent1" => $this->core->cms_label('hubTitleContent1'),
+        ];
+        return $data;
+        break;
       default:
         return false;
     }

@@ -2,7 +2,8 @@
 defined('BASEPATH') or exit('No direct script access allowed');
 ?>
 <!-- Hero Start -->
-<section class="bg-half-170 d-table w-100" style="background: url('<?php echo $custom['jjjBanner'][0]['img']; ?>');">
+<section class="bg-half-170 d-table w-100" style="background: url('<?php echo $custom['jjjBanner'][0]['img']; ?>');background-size: cover;
+    background-position-x: -305px;">
    
     <div class="container">
         <div class="row mt-5 justify-content-center">
@@ -58,8 +59,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
             <div class="row">
                 <div class="col-12 col-md-6 order-2 order-md-<?php echo $i % 2 == 1 ? "1" : "2" ?>">
-                    <h5 class="fnText" <?php echo $row['data']['h1']; ?>><?php echo $row['h1']; ?></h5>
-
+                  
                     <div class="fnRichtext" <?php echo $row['data']['content']; ?>><?php echo $row['content']; ?></div>
                     <?php echo $row['modal']; ?>
                 </div>
@@ -133,7 +133,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                             <?php echo $r['modal']; ?>
                         </div>
                         <div class="col-12 col-md-3 text-center">
-                            <a href="<?php echo $r['href']; ?>" class="btn btn-sm btn-primary">Permohonan Demo</a>
+                            <a href="<?php echo $r['href']; ?>" class="btn btn-outline-primary">Permohonan Demo</a>
                         </div>
                     </div>
                 <?php } ?>

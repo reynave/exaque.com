@@ -37,7 +37,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
         <div class="row">
             <div class="col-md-7 col-12">
                 <h1 class="fnText" <?php echo $core['content']['data']['name']; ?>><?php echo $core['content']['name']; ?></h1>
-                <h4 class="fnRichtext" <?php echo $core['content']['data']['content']; ?>><?php echo $core['content']['content']; ?></h4>
+                <div class="fnRichtext" <?php echo $core['content']['data']['content']; ?>><?php echo $core['content']['content']; ?></div>
                 <?php echo !$core['content']['id'] ? $core['content']['insert'] : $core['content']['edit']; ?>
             </div>
 
@@ -60,15 +60,20 @@ defined('BASEPATH') or exit('No direct script access allowed');
             <div class="col-12 text-center">
                 <h3 class="fnText" <?php echo $custom['poW1Title']['attributes'] ?>><?php echo $custom['poW1Title']['content'] ?></h3>
             </div>
+<style>
 
+    .haha{
+        height: 168px;
+    }
+</style>
 
             <?php foreach ($custom['poW1'] as $row) { ?>
-                <div class="col-md-4 col-12">
-                    <div class="my-2">
-                        <img src="<?php echo $row['img']; ?>" width="100%">
+                <div class="col">
+                    <div class="my-2 haha" >
+                        <img src="<?php echo $row['img']; ?>" width="100%" >
                     </div>
-                    <h5 class="fnText" <?php echo $row['data']['h1']; ?>><?php echo $row['h1']; ?></h5>
-                    <div class="fnRichtext" <?php echo $row['data']['h2']; ?>><?php echo $row['h2']; ?></div>
+                    <h5 class="fnText text-center" <?php echo $row['data']['h1']; ?>><?php echo $row['h1']; ?></h5>
+                    <div class="fnRichtext text-center" <?php echo $row['data']['h2']; ?>><?php echo $row['h2']; ?></div>
                     <div>
                         <?php echo $row['modal']; ?>
                     </div>
@@ -110,7 +115,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 
                     <div class="my-3">
-                        <a href="<?php echo $row['href']; ?>" class="btn btn-sm btn-primary"><?php echo $row['h3']; ?></a>
+                        <a href="<?php echo $row['href']; ?>" class="btn  btn-outline-primary"><?php echo $row['h3']; ?></a>
                     </div>
 
                     <div>

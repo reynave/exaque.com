@@ -1,8 +1,14 @@
 .fira-font {
     font-family: 'Fira Sans', sans-serif;
 }
-h1,h2,h3,h4{
+h1,h2{
     font-family: 'Roboto', sans-serif;
+}
+@media (max-width: 991px){
+    #topnav #navigation {
+        max-height: 86vh;
+    }
+
 }
 
 .btn-exa{
@@ -146,6 +152,20 @@ a {
 .cms img {
     max-width: 100% !important;
 }
+@media (max-width: 991px){
+    #navigation {
+        position: absolute;
+        top: 103px;
+    }
+}
+
+@media (min-width: 992px){
+    #topnav .navigation-menu > li .submenu li a {
+        display: block;
+        padding: 5px 20px;
+    }
+}
+
 
 .homeValue p {
     line-height: 1.4;
@@ -240,28 +260,28 @@ table.dataTable.no-footer {
 }
 
 
+
+
+.fa-red {
+    color: #FF0000;
+}
 .style01 {
     position: relative;
     display: block;
     transition: transform .2s;
     /* Animation */
 }
-
-.fa-red {
-    color: #FF0000;
-}
-
 .style01 .style01-01 {
     position: absolute;
     width: 100%;
-    top: 45px;
+    top: 22%;
     text-align: center;
 
 
 }
 
 .style01:hover .style01-01 {
-    transform: scale(1.5);
+    transform: scale(1.2);
     /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
 }
 
@@ -284,7 +304,7 @@ iframe {
 .style02 .style02-01 {
     position: absolute;
     width: 100%;
-    top: 40%;
+    top: 35%;
     text-align: center;
 
 

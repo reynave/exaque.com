@@ -21,7 +21,14 @@ defined('BASEPATH') or exit('No direct script access allowed');
     </div>
     <!--end container-->
 </section>
-
+<!--end section-->
+<div class="position-relative">
+    <div class="shape overflow-hidden text-white">
+        <svg viewBox="0 0 2880 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 48H1437.5H2880V0H2160C1442.5 52 720 0 720 0H0V48Z" fill="currentColor"></path>
+        </svg>
+    </div>
+</div>
 
 <!-- counter Start -->
 <section class="section bg-light py-5">
@@ -39,10 +46,14 @@ defined('BASEPATH') or exit('No direct script access allowed');
                     </div>
                 </div>
 
-                <div class="col-md-6 order-1 order-md-2 style02"> 
-                    <img src="<?php echo $r['img'] ?>" width="100%" class="img-fluid bgnhover"  data-bs-toggle="modal" data-bs-target="#videopopup<?php echo $r['id'] ?>" class="rounded" width="100%" alt="exaque">
+                <div class="col-md-6 order-1 order-md-2 ">
+                    <div class="style02">
+                        <img src="<?php echo $r['img'] ?>" width="100%" class="img-fluid bgnhover" data-bs-toggle="modal" data-bs-target="#videopopup<?php echo $r['id'] ?>" class="rounded" width="100%" alt="exaque">
 
-                    <div class="style02-01" data-bs-toggle="modal" data-bs-target="#videopopup<?php echo $r['id'] ?>"><i class="fab fa-red fa-3x fa-youtube"></i> </div>
+                        <div class="style02-01" data-bs-toggle="modal" data-bs-target="#videopopup<?php echo $r['id'] ?>">
+                            <img src="<?php echo base_url() ?>assets/icon/icons8-youtube-240.png" width="60">
+                        </div>
+                    </div>
                 </div>
 
 

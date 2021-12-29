@@ -82,34 +82,44 @@ defined('BASEPATH') or exit('No direct script access allowed');
       <div id="navigation">
         <!-- Navigation Menu-->
         <ul class="navigation-menu">
-          <?php foreach ($core['navigation'] as $row) { 
+          <?php foreach ($core['navigation'] as $row) {
             if ($row['idefault'] != "1") {
           ?>
-
-              <?php if ($row['level2']) { ?>
-                <li class="has-submenu parent-menu-item">
-                  <a href="<?php echo $row['id'] == 4 || $row['id'] ==6  ? "javascript:;" :$row['href'] ?>"><?php echo $row['name'] ?></a><span class="menu-arrow"></span>
+              <li class="has-submenu parent-parent-menu-item">
+                <a href="javascript:void(0)"><?php echo $row['name'] ?></a>
+                <?php if ($row['level2']) { ?>
+                  <span class="menu-arrow"></span>
                   <ul class="submenu">
-                    <?php foreach ($row['level2'] as $row2) { ?>
-                      <li class="<?php if ($row2['level3']) { ?>has-submenu parent-menu-item <?php } ?>"><a target="<?php echo $row2['blank'] ?>" href="<?php echo $row2['href'] ?>" class="sub-menu-item"><?php echo $row2['name'] ?> <?php if ($row2['level3']) { ?><span class="submenu-arrow"></span><?php } ?></a>
+                  <?php if ($row['id'] != 4 && $row['id'] != 6) { ?>
+                    <li>
+                      <a href="<?php echo $row['href'] ?>">
+                        <h6><?php echo $row['name']; ?></h6>
+                      </a>
+                    </li>
+                    <?php } ?>
 
+                    <?php foreach ($row['level2'] as $row2) { ?>
+                      <li class="has-submenu parent-menu-item"><a href="<?php echo !$row2['level3'] ? $row2['href']:"javascript:void(0)";?>"> <?php echo $row2['name'] ?> </a>
                         <?php if ($row2['level3']) { ?>
+                          <span class="submenu-arrow"></span>
                           <ul class="submenu">
+                            <li>
+                              <a href="<?php echo $row2['href'] ?>">
+                                <h6><?php echo $row2['name'] ?></h6>
+                              </a>
+                            </li>
                             <?php foreach ($row2['level3'] as $row3) { ?>
-                              <li><a target="<?php echo $row3['blank'] ?>" href="<?php echo $row3['href'] ?>" class="sub-menu-item"><?php echo $row3['name'] ?></a></li>
+                              <li><a href="<?php echo $row3['href'] ?>" class="sub-menu-item"> <?php echo $row3['name'] ?></a></li>
                             <?php } ?>
                           </ul>
                         <?php } ?>
-
                       </li>
                     <?php } ?>
                   </ul>
-                </li>
-
-              <?php } else { ?>
-                <li><a target="<?php echo $row['blank'] ?>" href="<?php echo $row['href'] ?>" class="sub-menu-item"><?php echo $row['name'] ?></a></li>
-              <?php  } ?>
-          <?php  }
+                <?php } ?>
+              </li>
+          <?php
+            }
           } ?>
 
         </ul>

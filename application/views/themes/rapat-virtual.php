@@ -1,16 +1,17 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 ?>
-<!-- Hero Start -->
-<section class="bg-half-170 d-table w-100" style="background: url('<?php echo $custom['virtualBanner'][0]['img']; ?>');">
-
+ 
+<section class="bg-half-170 d-table w-100 bg-home d-flex align-items-center" style="background: url('<?php echo $custom['virtualBanner'][0]['img']; ?>') center center; height: auto;background-size: cover;">
     <div class="container">
-        <div class="row mt-5 justify-content-center">
-            <div class="col-lg-12 text-center">
-                <div class="pages-heading title-heading">
-                    <h1 class="text-dark  fnText" <?php echo $custom['virtualBanner'][0]['data']['h1']; ?>> <?php echo $custom['virtualBanner'][0]['h1']; ?> </h1>
-                    <h3 class="fnText text-dark" <?php echo $custom['virtualBanner'][0]['data']['content']; ?>> <?php echo $custom['virtualBanner'][0]['content']; ?></h3>
-                    <?php echo $custom['virtualBanner'][0]['modal']; ?>
+        <div class="row ">
+            <div class="col-md-5 mt-0  pt-0  ">
+                <div class="ms-lg-4">
+                    <div class="title-heading margin-top-100">
+                        <h1 class="display-4 fw-bold mb-3 fnText" <?php echo $custom['virtualBanner'][0]['data']['h1']; ?>> <?php echo $custom['virtualBanner'][0]['h1']; ?></h1>
+                        <h3 class="fnText " <?php echo $custom['virtualBanner'][0]['data']['content']; ?>> <?php echo $custom['virtualBanner'][0]['content']; ?></h3>
+                        <?php echo $custom['virtualBanner'][0]['modal']; ?>
+                    </div>
                 </div>
             </div>
             <!--end col-->
@@ -19,6 +20,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
     </div>
     <!--end container-->
 </section>
+ 
 <div class="position-relative">
     <div class="shape overflow-hidden text-white">
         <svg viewBox="0 0 2880 48" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -39,7 +41,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                 <h1 class="fnText" <?php echo $core['content']['data']['name']; ?>><?php echo $core['content']['name']; ?></h1>
             </div>
             <div class="col-12 ">
-                <h4 class="fnRichtext" <?php echo $core['content']['data']['content']; ?>><?php echo $core['content']['content']; ?></h4>
+                <h5 class="fnRichtext" <?php echo $core['content']['data']['content']; ?>><?php echo $core['content']['content']; ?></h5>
                 <?php echo !$core['content']['id'] ? $core['content']['insert'] : $core['content']['edit']; ?>
             </div>
         </div>
