@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 ?> 
-<section class="bg-half-170 d-table w-100 text-white" style="background: url('<?php echo $custom['penghitungBanner'][0]['img']; ?>');background-size: cover;">
+<section class="bg-half-170 d-table w-100 text-white" style="background: url('<?php echo $custom['penghitungBanner'][0]['img']; ?>');background-size: cover;background-position-y: 44px;">
     <div class="container">
         <div class="row align-items-center">
             <div class="col-12 col-md-7">
@@ -59,24 +59,27 @@ defined('BASEPATH') or exit('No direct script access allowed');
     </div>
 </section>
 
-
+<style>
+                .haha {
+                    height: 171px;
+                }
+                .font-sm{
+                    font-size: 14px;
+                }
+            </style> 
 
 <section class="section ">
     <div class="container  py-2">
         <div class="row ">
             <?php foreach ($custom['penghitungHeader'] as $row) { ?>
-                <div class="col ">
-                    <div class="ms-lg-4">
-                        <div class="section-title">
-                            <div class="sth01">
-                                <img src="<?php echo $row['img'] ?>"  width="100%" class="my-3">
-                            </div>
-                            <h5 class="text-center mb-4 fnText" <?php echo $row['data']['h1'] ?>><?php echo $row['h1'] ?></h5>
-                            <div class="fnRichtext"  <?php echo $row['data']['content'] ?>> <?php echo $row['content'] ?> </div>
-                            <div class="text-center">
-                                    <?php echo $row['modal'];?>
-                            </div>
-                        </div>
+                <div class="col">
+                    <div class="my-2 haha text-center">
+                        <img src="<?php echo $row['img']; ?>" width="70%">
+                    </div>
+                    <h6 class="fnText text-center" <?php echo $row['data']['h1']; ?>><?php echo $row['h1']; ?></h6>
+                    <div class="fnRichtext text-center font-sm" <?php echo $row['data']['h2']; ?>><?php echo $row['h2']; ?></div>
+                    <div>
+                        <?php echo $row['modal']; ?>
                     </div>
                 </div>
 

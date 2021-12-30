@@ -1,8 +1,8 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
-?> 
+?>
 <section class="bg-half-170 d-table w-100" style="background: url('<?php echo $custom['mpBanner'][0]['img']; ?>');">
-   
+
     <div class="container">
         <div class="row mt-5 justify-content-center">
             <div class="col-lg-12 text-center">
@@ -46,7 +46,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
         <div class="container my-3 ">
             <div class="row">
-                <div class="col-6">  
+                <div class="col-6">
                     <img src="<?php echo $core['content']['img'] ?>" width="100%" alt="exaque images">
                 </div>
 
@@ -92,7 +92,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
             </div>
         </div>
 
- 
+
         <div class="container my-3 ">
             <div class="row">
                 <div class="col-12 text-left">
@@ -103,7 +103,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
         <div class="container my-4 ">
             <div class="row">
                 <?php foreach ($custom['mpW2'] as $r) { ?>
-                    <div class="col-6"> 
+                    <div class="col-6">
                         <div class="fnRichtext" <?php echo $r['data']['content']; ?>><?php echo $r['content']; ?> </div>
                         <div><?php echo $r['modal']; ?></div>
                     </div>
@@ -111,7 +111,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                     <div class="col-6 text-center">
                         <img src="<?php echo $r['img'] ?>" width="80%">
                     </div>
-                  
+
                 <?php } ?>
             </div>
         </div>
@@ -126,10 +126,25 @@ defined('BASEPATH') or exit('No direct script access allowed');
                     </div>
 
                     <div class="col-12 text-center">
-                        <img src="<?php echo $r['img'] ?>" width="100%">
+
+                        <div class="style02">
+                            <img src="<?php echo $r['img'] ?>" width="100%" class="img-fluid bgnhover" data-bs-toggle="modal" data-bs-target="#videopopup<?php echo $r['id'] ?>" class="rounded" width="100%" alt="exaque">
+
+                            <div class="style02-01" data-bs-toggle="modal" data-bs-target="#videopopup<?php echo $r['id'] ?>">
+                                <img src="<?php echo base_url() ?>assets/icon/icons8-youtube-240.png" width="60">
+                            </div>
+                        </div>
+
+                        <div class="modal fade modalVideo iframeYoutube" data-id="<?php echo $r['id'] ?>" id="videopopup<?php echo $r['id'] ?>" tabindex="-1" aria-hidden="true">
+                            <div class="modal-dialog modal-lg" role="document">
+                                <div class="modal-content">
+                                    <iframe class="iframeYoutube" id="youbt_<?php echo $r['id'] ?>" src="<?php echo $r['href'] ?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="col-12">
-                        <?php echo $r['modal'];?>
+                        <?php echo $r['modal']; ?>
                     </div>
                 <?php } ?>
             </div>
@@ -146,7 +161,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                     <div class="col-6">
                         <div class="fnRichtext" <?php echo $r['data']['content']; ?>><?php echo $r['content']; ?> </div>
 
-                        <?php echo $r['modal'];?>
+                        <?php echo $r['modal']; ?>
                     </div>
 
                     <div class="col-6 text-center">

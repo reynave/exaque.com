@@ -6,6 +6,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
         width: 100% !important;
     }
+    .card-body{
+        background: rgb( 245,248,250);
+    }
 </style>
 <!-- Start -->
 <section class="section noBanner ">
@@ -22,9 +25,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
                 <?php if ($core['content']['id'] == '311') { ?>
                     <div class="card shadow rounded border-0 mt-5 " id="commentForm2">
-                        <div class="card-body py-5">
+                        <div class="card-body ">
                           
-                            <div class="custom-form mt-3">
+                            <div class="custom-form">
 
                                 <form <?php echo $core['contact_us']['action'] ?> name="myForm">
                                     <?php echo $core['contact_us']['return'] ?>
@@ -141,9 +144,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
                 if ($core['content']['id'] == '310') { ?>
                     <div class="card shadow rounded border-0 mt-5 " id="commentForm3">
-                        <div class="card-body py-5">
-                           
-                            <div class="custom-form mt-3">
+                        <div class="card-body ">
+                       
+                            <div class="custom-form ">
 
                                 <form <?php echo $core['contact_us']['action'] ?> name="myForm">
                                     <?php echo $core['contact_us']['return'] ?>
@@ -272,9 +275,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
                                         <div class="col-12">
                                             <div class="mb-3">
                                                 <label for="how">Pesan</label>
-                                                <textarea class="form-control" id="how" rows="5" name="pesan" placeholder="Apa yang paling menarik untuk anda pelajari ?" required></textarea>
+                                                <textarea class="form-control" id="how" rows="5" name="pesan" placeholder=" Jelaskan masalah Anda dan tim teknis kami akan segera menghubungi Anda kembali." required></textarea>
                                                 <div class="invalid-feedback" id="ehow">
-                                                    Jelaskan masalah Anda dan time teknis kami akan segera menghubungi Anda kembali
+                                                   Jelaskan masalah Anda dan tim teknis kami akan segera menghubungi Anda kembali.
                                                 </div>
                                             </div>
                                         </div>

@@ -1,14 +1,14 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 ?>
-<section class=" d-table w-100 bg-home d-flex align-items-center" style="background: url('<?php echo $custom['qsoloBanner'][0]['img']; ?>') center center; background-repeat: no-repeat;">
+<section class="bg-half-170 d-table w-100 bg-home d-flex align-items-center" style="background: url('<?php echo $custom['qsoloBanner'][0]['img']; ?>') center center; height: auto;background-size: cover; background-position-y: 54px;">
     <div class="container">
         <div class="row ">
-            <div class="col-md-6 col-12 mt-0  pb-5  ">
+            <div class="col-md-7 mt-0  pt-0  ">
                 <div class="ms-lg-4">
-                    <div class="title-heading margin-top-100">
-                        <h1 class="display-4 fw-bold mb-3 fnText" <?php echo $custom['qsoloBanner'][0]['data']['h1']; ?>> <?php echo $custom['qsoloBanner'][0]['h1']; ?></h1>
-                        <h3 class="fnText" <?php echo $custom['qsoloBanner'][0]['data']['content']; ?>> <?php echo $custom['qsoloBanner'][0]['content']; ?></h3>
+                    <div class="title-heading">
+                        <h1 class="display-4 fw-bold mb-3 fnText " <?php echo $custom['qsoloBanner'][0]['data']['h1']; ?>> <?php echo $custom['qsoloBanner'][0]['h1']; ?></h1>
+                        <h3 class="fnText  " <?php echo $custom['qsoloBanner'][0]['data']['content']; ?>> <?php echo $custom['qsoloBanner'][0]['content']; ?></h3>
                         <?php echo $custom['qsoloBanner'][0]['modal']; ?>
                     </div>
                 </div>
@@ -20,6 +20,14 @@ defined('BASEPATH') or exit('No direct script access allowed');
     <!--end container-->
 </section>
 
+<!--end section-->
+<div class="position-relative">
+    <div class="shape overflow-hidden text-white">
+        <svg viewBox="0 0 2880 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 48H1437.5H2880V0H2160C1442.5 52 720 0 720 0H0V48Z" fill="currentColor"></path>
+        </svg>
+    </div>
+</div>
 
 
 

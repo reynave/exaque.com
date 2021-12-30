@@ -26,6 +26,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
     <div class="container">
         <div class="row">
             <div class="col-12">
+                <div class="fnText" <?php echo $core['content']['data']['name'] ?>><?php echo  $core['content']['name'] ?></div>
                 <div class="fnRichtext" <?php echo $core['content']['data']['content'] ?>><?php echo  $core['content']['content'] ?></div>
             </div>
         </div>

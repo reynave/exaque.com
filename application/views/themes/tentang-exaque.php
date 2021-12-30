@@ -5,11 +5,11 @@ defined('BASEPATH') or exit('No direct script access allowed');
 <section class="bg-half-170 d-table w-100 " style="background: url('<?php echo $custom['aboutBanner'][0]['img']; ?>');">
 
     <div class="container">
-        <div class="row mt-5 justify-content-center">
-            <div class="col-lg-12 text-center">
+        <div class="row mt-5">
+            <div class="col-md-6 col-12">
                 <div class="pages-heading title-heading">
-                    <h1 class="title-dark fnText" <?php echo $custom['aboutBanner'][0]['data']['h1']; ?>> <?php echo $custom['aboutBanner'][0]['h1']; ?> </h1>
-                    <h3 class="fnText" <?php echo $custom['aboutBanner'][0]['data']['h2']; ?>> <?php echo $custom['aboutBanner'][0]['h2']; ?> </h3>
+                    <h1 class="text-white fnText" <?php echo $custom['aboutBanner'][0]['data']['h1']; ?>> <?php echo $custom['aboutBanner'][0]['h1']; ?> </h1>
+                    <h3 class="text-white fnText" <?php echo $custom['aboutBanner'][0]['data']['h2']; ?>> <?php echo $custom['aboutBanner'][0]['h2']; ?> </h3>
                     <?php echo $custom['aboutBanner'][0]['modal']; ?>
                 </div>
             </div>

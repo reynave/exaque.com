@@ -11,6 +11,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                     <h1 class="text-white   fnText" <?php echo $custom['apBanner'][0]['data']['h1']; ?>> <?php echo $custom['apBanner'][0]['h1']; ?> </h1>
                     <p class="text-white para-desc mb-0 mx-auto fnRichtext" <?php echo $custom['apBanner'][0]['data']['content']; ?>> <?php echo $custom['apBanner'][0]['content']; ?></p>
                     <?php echo $custom['apBanner'][0]['modal']; ?>
+                    <?php echo $core['content']['id'] ? $core['content']['edit']:$core['content']['insert']; ?>
                 </div>
             </div>
             <!--end col-->
@@ -113,37 +114,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
     </div>
 
 </section>
-
-
-
-
-
-<?php $r = $custom['apW2'][0]; ?>
-<section class="section">
-    <div class="container my-3 text-center">
-
-        <div class="row">
-            <div class="col-12 ">
-                <h3 class="fnText " <?php echo $r['data']['h1']; ?>> <?php echo $r['h1']; ?></h3>
-            </div>
-            <div class="col-12 ">
-                <div class="fnRichtext" <?php echo $r['data']['content']; ?>><?php echo $r['h1']; ?></div>
-
-            </div>
-            <div class="col-12">
-                <a href="<?php echo $r['href']; ?>" class="btn btn-lg btn-primary"><?php echo $r['h3']; ?></a>
-            </div>
-            <div class="col-12">
-                <?php echo $r['modal']; ?>
-            </div>
-        </div>
-    </div>
-
-</section>
-
-
-
-
+ 
 
 
 <section class="section ">

@@ -1,11 +1,11 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 ?>
- 
-<section class="bg-half-170 d-table w-100 bg-home d-flex align-items-center" style="background: url('<?php echo $custom['virtualBanner'][0]['img']; ?>') center center; height: auto;background-size: cover;">
+
+<section class="d-table w-100 bg-home d-flex align-items-center" style="background: url('<?php echo $custom['virtualBanner'][0]['img']; ?>') center center; height: auto;background-size: cover; padding: 100px 0px;">
     <div class="container">
         <div class="row ">
-            <div class="col-md-5 mt-0  pt-0  ">
+            <div class="col-md-6 mt-0  pt-0  ">
                 <div class="ms-lg-4">
                     <div class="title-heading margin-top-100">
                         <h1 class="display-4 fw-bold mb-3 fnText" <?php echo $custom['virtualBanner'][0]['data']['h1']; ?>> <?php echo $custom['virtualBanner'][0]['h1']; ?></h1>
@@ -20,7 +20,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
     </div>
     <!--end container-->
 </section>
- 
+
 <div class="position-relative">
     <div class="shape overflow-hidden text-white">
         <svg viewBox="0 0 2880 48" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -70,15 +70,13 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 
 
-
-
                     <?php if ($row['href'] != "") { ?>
                         <div class="style02">
-
-
                             <img src="<?php echo $row['img'] ?>" width="100%" class="img-fluid bgnhover" data-bs-toggle="modal" data-bs-target="#videopopup<?php echo $row['id'] ?>" class="rounded" width="100%" alt="exaque">
 
-                            <div class="style02-01" data-bs-toggle="modal" data-bs-target="#videopopup<?php echo $row['id'] ?>"><i class="fab fa-red fa-3x fa-youtube"></i> </div>
+                            <div class="style02-01" data-bs-toggle="modal" data-bs-target="#videopopup<?php echo $row['id'] ?>">
+                                <img src="<?php echo base_url() ?>assets/icon/icons8-youtube-240.png" width="60">
+                            </div>
                         </div>
 
                         <div class="modal fade modalVideo iframeYoutube" data-id="<?php echo $row['id'] ?>" id="videopopup<?php echo $row['id'] ?>" tabindex="-1" aria-hidden="true">

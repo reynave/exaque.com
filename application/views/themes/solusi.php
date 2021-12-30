@@ -8,8 +8,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
             <div class="col-lg-12 text-center">
                 <div class="pages-heading title-heading">
                     <h1 class="text-white  fnText" <?php echo $custom['solusiBanner'][0]['data']['h1']; ?>> <?php echo $custom['solusiBanner'][0]['h1']; ?> </h1>
-                    <p class="text-white para-desc mb-0 mx-auto fnRichtext" <?php echo $custom['solusiBanner'][0]['data']['content']; ?>> <?php echo $custom['solusiBanner'][0]['content']; ?></p>
+                    <div class="text-white para-desc mb-0 mx-auto fnRichtext" <?php echo $custom['solusiBanner'][0]['data']['content']; ?>> <?php echo $custom['solusiBanner'][0]['content']; ?></div>
                     <?php echo $custom['solusiBanner'][0]['modal']; ?>
+                    <?php echo $core['content']['id'] ? $core['content']['edit']:$core['content']['insert']; ?>
                 </div>
             </div>
             <!--end col-->
@@ -59,7 +60,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                     <div class="ms-lg-4"> 
                         <div class="section-title">
                             <h4 class="title mb-4 fnText" <?php echo $row['data']['h1'] ?>><?php echo $row['h1'] ?></h4>
-                            <p class="text-muted fnText" <?php echo $row['data']['content'] ?>><?php echo $row['content'] ?></p>
+                            <div class="text-muted fnText" <?php echo $row['data']['content'] ?>><?php echo $row['content'] ?></div>
                             <a href="<?php echo $row['href'] ?>" class="btn btn-outline-primary mt-3">Baca Selengkapnya</a>
                             <div> <?php echo $row['modal'] ?></div>
                         </div>

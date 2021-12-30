@@ -1,12 +1,12 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 ?>
-<section class="bg-half-170 d-table w-100 bg-home d-flex align-items-center" style="background: url('<?php echo $custom['qeBanner'][0]['img']; ?>') center center; height: auto;background-size: cover;">
+<section class="d-table w-100 bg-home d-flex align-items-center" style="background: url('<?php echo $custom['qeBanner'][0]['img']; ?>') center center; height: auto;background-size: cover;  padding:150px 0px 100px 0px">
     <div class="container">
         <div class="row ">
             <div class="col-md-9 mt-0  pt-0  ">
                 <div class="ms-lg-4">
-                    <div class="title-heading margin-top-100">
+                    <div class="title-heading mt-5">
                         <h1 class="display-4 fw-bold mb-3 fnText text-white" <?php echo $custom['qeBanner'][0]['data']['h1']; ?>> <?php echo $custom['qeBanner'][0]['h1']; ?></h1>
                         <h3 class="fnText text-white" <?php echo $custom['qeBanner'][0]['data']['content']; ?>> <?php echo $custom['qeBanner'][0]['content']; ?></h3>
                         <?php echo $custom['qeBanner'][0]['modal']; ?>
@@ -124,7 +124,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                             <?php echo $a['content']; ?>
                         </div>
                         <div style="text-align: right;">
-                            <a href="<?php echo $a['href']; ?>" class="btn btn-sm btn-primary text-right">Permohonan Demo Gratis</a>
+                            <a href="<?php echo $a['href']; ?>" class="btn btn-outline-primary text-right">Permohonan Demo Gratis</a>
                         </div>
                     </div>
 

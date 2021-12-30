@@ -1,13 +1,18 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 ?>
-<section class="bg-half-170 d-table w-100 bg-home d-flex align-items-center" style="background: url('<?php echo $custom['managedBanner'][0]['img']; ?>') center center; height: auto; background-size: cover;" id="home">
-  
+<style>
+    .title-heading h1, h3{
+        text-shadow: 1px 1px 3px #fff;
+    }
+</style>
+<section class="d-table w-100 bg-home d-flex align-items-center" style="background: url('<?php echo $custom['managedBanner'][0]['img']; ?>') center center; height: auto; background-size: cover; padding:150px 0px 100px 0px" >
+
     <div class="container">
         <div class="row ">
         <div class="col-md-9 mt-0  pt-0  ">
                 <div class="ms-lg-4">
-                    <div class="title-heading margin-top-100">
+                    <div class="title-heading mt-5">
                         <h1 class="penghitung-4 fw-bold mb-3 fnText" <?php echo $custom['managedBanner'][0]['data']['h1']; ?>> <?php echo $custom['managedBanner'][0]['h1']; ?></h1>
                         <h3 class="fnText" <?php echo $custom['managedBanner'][0]['data']['content']; ?>> <?php echo $custom['managedBanner'][0]['content']; ?></h3>
                         <?php echo $custom['managedBanner'][0]['modal']; ?>

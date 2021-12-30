@@ -111,7 +111,15 @@ defined('BASEPATH') or exit('No direct script access allowed');
         $('#example').DataTable({
             lengthMenu: [4],
             lengthChange: false, 
-            searching: false
+            searching: false,
+            ordering: false,
+            "language": {
+                "paginate": {
+                    "previous": "Sebelumnya",
+                    "next": "Berikutnya"
+                    
+                }
+            }
         });
         $('#commentFormSuccess').hide();
         $('.iframeYoutube').on('hidden.bs.modal', function() {

@@ -3,7 +3,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 ?>
 <!-- Hero Start -->
 <section class="bg-half-170 d-table w-100" style="background: url('<?php echo $custom['poBanner'][0]['img']; ?>');">
-  
+
     <div class="container">
         <div class="row mt-5 justify-content-center">
             <div class="col-lg-12 text-center">
@@ -52,28 +52,27 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 
 
-<section class="section">
-
-    <div class="container my-3 ">
-
+<section class="section"> 
+    <div class="container my-3 "> 
         <div class="row">
             <div class="col-12 text-center">
                 <h3 class="fnText" <?php echo $custom['poW1Title']['attributes'] ?>><?php echo $custom['poW1Title']['content'] ?></h3>
             </div>
-<style>
-
-    .haha{
-        height: 211px;
-    }
-</style>
-
+            <style>
+                .haha {
+                    height: 171px;
+                }
+                .font-sm{
+                    font-size: 14px;
+                }
+            </style> 
             <?php foreach ($custom['poW1'] as $row) { ?>
                 <div class="col">
-                    <div class="my-2 haha" >
-                        <img src="<?php echo $row['img']; ?>" width="100%" >
+                    <div class="my-2 haha text-center">
+                        <img src="<?php echo $row['img']; ?>" width="70%">
                     </div>
-                    <h5 class="fnText text-center" <?php echo $row['data']['h1']; ?>><?php echo $row['h1']; ?></h5>
-                    <div class="fnRichtext text-center" <?php echo $row['data']['h2']; ?>><?php echo $row['h2']; ?></div>
+                    <h6 class="fnText text-center" <?php echo $row['data']['h1']; ?>><?php echo $row['h1']; ?></h6>
+                    <div class="fnRichtext text-center font-sm" <?php echo $row['data']['h2']; ?>><?php echo $row['h2']; ?></div>
                     <div>
                         <?php echo $row['modal']; ?>
                     </div>
@@ -84,13 +83,13 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 </section>
 
-<?php $row = $custom['poDark1'][0];?>
+<?php $row = $custom['poDark1'][0]; ?>
 <section class="section bg-dark text-white">
 
-    <div class="container my-3 "> 
-        <div class="row">  
+    <div class="container my-3 ">
+        <div class="row">
             <h5 class="fnText" <?php echo $row['data']['h1']; ?>><?php echo $row['h1']; ?></h5>
-            <div class="fnRichtext" <?php echo $row['data']['h2']; ?>><?php echo $row['h2']; ?></div> 
+            <div class="fnRichtext" <?php echo $row['data']['h2']; ?>><?php echo $row['h2']; ?></div>
         </div>
     </div>
 

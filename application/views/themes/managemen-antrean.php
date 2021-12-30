@@ -74,6 +74,12 @@ defined('BASEPATH') or exit('No direct script access allowed');
         <style>
             .min-hg {
                 min-height: 356px;
+                position: relative;
+            }
+            .min-hg .btn-ha{
+                position: absolute;
+                bottom: 32px;
+                left: 18px;
             }
         </style>
 
@@ -85,13 +91,16 @@ defined('BASEPATH') or exit('No direct script access allowed');
                     $i++;
                 ?>
                     <div class="col-12 col-md-6">
-                        <div class="border min-hg <?php echo $i % 2 == 0 ? "bg-primary text-white" : ""; ?> p-3 " style="background: url(<?php echo $r['img'] ?>);    background-position: bottom right;    background-repeat: no-repeat;    background-size: cover;">
+                        <div class="border min-hg <?php echo $i % 2 == 0 ? "bg-primary text-white" : ""; ?> p-3 " style="background: url(<?php echo $r['img'] ?>); background-position: bottom right;    background-repeat: no-repeat;    background-size: cover;">
                             <h4 class="fnText display-6" <?php echo $r['data']['h1'] ?>> <?php echo $r['h1'] ?></h4>
                             <div class="fnRichtext" <?php echo $r['data']['content'] ?>>
                                 <?php echo $r['content'] ?>
                             </div>
-                            <a href="<?php echo $r['href'] ?>" class="btn  <?php echo $i % 2 == 0 ? "btn-light" : "btn-outline-primary"; ?>"> <?php echo $r['h3'] ?></a>
-                            <?php echo $r['modal']; ?>
+                            <div class="btn-ha">
+                                <a href="<?php echo $r['href'] ?>" class="btn  <?php echo $i % 2 == 0 ? "btn-light" : "btn-outline-primary"; ?>"> <?php echo $r['h3'] ?></a>
+                                <?php echo $r['modal']; ?>
+                            </div>
+                          
                         </div>
                     </div>
                 <?php } ?>
@@ -101,24 +110,23 @@ defined('BASEPATH') or exit('No direct script access allowed');
 </section>
 
 <section class="section bg-light">
-    <div class="wrapper-sm">
-    <div class="container ">
-        <div class="row">
-            <?php foreach ($custom['maFull1'] as $r) { ?>
-                <div class="col-12 ">
-                    <div class="bg-light  my-5 py-5" style="background: url(<?php echo $r['img'] ?>);    background-position: bottom left;    background-repeat: no-repeat;  background-size: contain;">
-                        <div class="row">
-                            <div class="col offset-md-5">
-                                <h3 class="fnText" <?php echo $r['data']['h1'] ?>> <?php echo $r['h1'] ?> </h3>
-                                <h5 class="fnText py-1 mb-4" <?php echo $r['data']['h1'] ?>> <?php echo $r['h1'] ?> </h5>
-                              
-                                <a href="<?php echo $r['href'] ?>" class="btn btn-outline-primary">Baca Selengkapnya</a>
-                                <div> <?php echo $r['modal'] ?></div>
-                            </div>
-                        </div>
+    <div class="wrapper-sm  pt-4">
+        <div class="container ">
+            <div class="row">
+                <?php foreach ($custom['maFull1'] as $r) { ?>
+                    <div class="col-5 ">
+                        <img src="<?php echo $r['img'] ?>" class="img-fluid">
                     </div>
-                </div>
-            <?php } ?>
+                    <div class="col-7 ">
+                        <h3 class="fnText" <?php echo $r['data']['h1'] ?>> <?php echo $r['h1'] ?> </h3>
+                        <div class="fnText py-1" <?php echo $r['data']['content'] ?>> <?php echo $r['content'] ?> </div>
+
+                        <a href="<?php echo $r['href'] ?>" class="btn btn-outline-primary">Baca Selengkapnya</a>
+                        <div> <?php echo $r['modal'] ?></div>
+                    </div>
+                <?php } ?>
+            </div>
         </div>
     </div>
-</div>
+
+</section>

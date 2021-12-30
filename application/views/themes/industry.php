@@ -1,27 +1,24 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 ?>
-<!-- Hero Start --> 
-<section class="bg-half-150 d-table w-100 text-dark" style="background: url('<?php echo $custom['industryBanner'][0]['img']; ?>');background-size: cover;">
+<section class="bg-half-170 d-table w-100" style="background: url('<?php echo $custom['industryBanner'][0]['img']; ?>');"> 
     <div class="container">
-        <div class="row align-items-center">
-            <div class="  col-12 col-sm-12 ">
-                <div class="title-heading mt-4">
-                    <h1 class="heading mb-3 fnText text-white" <?php echo $custom['industryBanner'][0]['data']['h1']; ?>><?php echo $custom['industryBanner'][0]['h1']; ?></h1>
-                    <h3 class="para-desc fnText text-white" <?php echo $custom['industryBanner'][0]['data']['content']; ?>> <?php echo $custom['industryBanner'][0]['content']; ?></h3>
-                    <div class="  pt-2">
-                        <a href="<?php echo $custom['industryBanner'][0]['href']; ?>" class="btn btn-exa m-1">Permohonan Demo</a>
-                        <?php echo $custom['industryBanner'][0]['modal']; ?>
-                    </div>
+        <div class="row mt-5 justify-content-center">
+            <div class="col-lg-12 text-center">
+                <div class="pages-heading title-heading">
+                    <h1 class="text-white  fnText" <?php echo $custom['industryBanner'][0]['data']['h1']; ?>> <?php echo $custom['industryBanner'][0]['h1']; ?> </h1> 
+                    <div class="text-white para-desc mb-0 mx-auto fnRichtext" <?php echo $custom['industryBanner'][0]['data']['content']; ?>> <?php echo $custom['industryBanner'][0]['content']; ?></div>
+                    <?php echo $custom['industryBanner'][0]['modal']; ?>
+                    <?php echo $core['content']['id'] ? $core['content']['edit']:$core['content']['insert']; ?>
+                    
                 </div>
             </div>
-          
+            <!--end col-->
         </div>
         <!--end row-->
     </div>
     <!--end container-->
 </section>
-
 
 <!--end section-->
 <div class="position-relative">

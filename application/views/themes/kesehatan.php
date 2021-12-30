@@ -10,6 +10,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                     <div class="mt-4 pt-2">
                         <a href="<?php echo $custom['kesehatanBanner'][0]['href']; ?>" class="btn btn-exa m-1">Permohonan Demo</a>
                         <?php echo $custom['kesehatanBanner'][0]['modal']; ?>
+                        <?php echo $core['content']['id'] ? $core['content']['edit']:$core['content']['insert']; ?>
                     </div>
                 </div>
             </div>

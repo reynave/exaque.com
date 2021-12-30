@@ -2,7 +2,7 @@
 defined('BASEPATH') or exit('No direct script access allowed');
 ?>
 <!-- Hero Start -->
-<section class="bg-half-170 d-table w-100 text-white" style="background: url('<?php echo $custom['finansialBanner'][0]['img']; ?>');background-size: cover;">
+<section class=" d-table w-100 text-white" style="background: url('<?php echo $custom['finansialBanner'][0]['img']; ?>');background-size: cover; padding:150px 0px 80px 0px">
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-9 col-12">
@@ -12,6 +12,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                     <div class="mt-4 pt-2">
                         <a href="<?php echo $custom['finansialBanner'][0]['href']; ?>" class="btn btn-exa btn6 m-1">Permohonan Demo</a>
                         <?php echo $custom['finansialBanner'][0]['modal']; ?>
+                        <?php echo $core['content']['id'] ? $core['content']['edit']:$core['content']['insert']; ?>
                     </div>
                 </div>
             </div>
@@ -21,6 +22,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
     </div>
     <!--end container-->
 </section>
+
+
 <!--end section-->
 <div class="position-relative">
     <div class="shape overflow-hidden text-white">

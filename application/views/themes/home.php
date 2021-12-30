@@ -97,8 +97,10 @@ defined('BASEPATH') or exit('No direct script access allowed');
     <div class="container homeValue">
 
         <div class="row mt-3 pt-5 position-relative" id="counter" style="z-index: 1;">
-            <div class="col-12">
+            <div class="col-12 text-center">
                 <h3 class="text-center fnText" <?php echo $custom['title']["attributes"]; ?>><?php echo $custom['title']['content']; ?></h3>
+
+                <?php echo $core['content']['edit']?>
             </div>
             <?php
             foreach ($custom['home2'] as $row) {
@@ -110,8 +112,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                             <?php echo $row['h1']; ?>
                         </div>
                         <?php echo $row['modal']; ?>
-                    </div>
-
+                    </div> 
                 </div>
 
             <?php } ?>
