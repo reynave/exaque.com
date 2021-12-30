@@ -333,7 +333,15 @@ class Model extends CI_Model
         return $data;
         break;
 
-
+        case "solusi-solusi-ponsel":
+          $data = [
+            "solusiPonselWidget1" => $this->core->cms_widget('solusiPonselWidget1'),
+            "solusiPonselWidget1_action" => $this->core->cms_widget_action('solusiPonselWidget1'),   
+            "solusiPonselWidget2" => $this->core->cms_widget('solusiPonselWidget2'),
+          ];
+          return $data;
+          break;
+  
       case "video":
         $data = [
           "library_video" => $this->core->cms_widget('library_video'),
@@ -363,6 +371,18 @@ class Model extends CI_Model
         $data = [
           "hubTitle" => $this->core->cms_label('hubTitle'),
           "hubTitleContent1" => $this->core->cms_label('hubTitleContent1'),
+        ];
+        return $data;
+        break; 
+        
+        case "paket-sistem-antrean-ponsel":
+        $data = [
+          "bannerPaket" => $this->core->cms_widget('bannerPaket'),  
+          "paketWidget1" => $this->core->cms_widget('paketWidget1'), 
+          "paketWidget2Title" => $this->core->cms_widget('paketWidget2Title'), 
+          "paketWidget2" => $this->core->cms_widget('paketWidget2'), 
+
+
         ];
         return $data;
         break;
