@@ -111,11 +111,11 @@ class Core extends CI_Model
                                 document.getElementById(\'g-recaptcha-response\').value = token;
                             });
                         });
-                    </script>'; 
+                    </script>';
 
         $opengraph = '
     <title>' . strip_tags(self::title()) . '</title> 
-    <link rel="canonical" href="'.current_url().'">
+    <link rel="canonical" href="' . current_url() . '">
 
     <meta name="description" content="' . strip_tags(self::metadata_description()) . '">
     <meta name="keywords" content="' . strip_tags(self::metadata_keywords()) . '">
@@ -125,8 +125,8 @@ class Core extends CI_Model
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="' . strip_tags(self::title()) . '">
-    <meta name="twitter:description" content="' . strip_tags(self::metadata_description()). '">
-    <meta name="twitter:image"        content="' .strip_tags(  self::metadata_images()) . '">
+    <meta name="twitter:description" content="' . strip_tags(self::metadata_description()) . '">
+    <meta name="twitter:image"        content="' . strip_tags(self::metadata_images()) . '">
     
     <meta property="og:type" content="Article" />
     <meta property="og:url" content="' . current_url() . '" />
@@ -150,7 +150,7 @@ class Core extends CI_Model
         if ($this->uri->segment(2)) {
 
             $data = array(
-                "title" => strip_tags( self::title()),
+                "title" => strip_tags(self::title()),
                 "login" => self::login(),
                 "path" => self::path(),
                 "metadata" => array(
@@ -181,48 +181,48 @@ class Core extends CI_Model
             );
         } else {
 
-            $content = array( 
+            $content = array(
                 "id"  =>  $this->id_content,
                 "login" => self::login(),
                 "name" =>  self::select('status', 'cms_content', 'presence = 1 and id="' . $this->id_content . '" ') ?  $this->content_name : $this->content_name . " </span class='cms_disable text-warning'>[DISABLE]</span>",
                 "h1" => self::select('h1', 'cms_content', 'presence = 1 and id="' . $this->id_content . '" ' . self::content_status()),
                 "h2" => self::select('h2', 'cms_content', 'presence = 1 and id="' . $this->id_content . '" ' . self::content_status()),
                 "h3" => self::select('h3', 'cms_content', 'presence = 1 and id="' . $this->id_content . '" ' . self::content_status()),
-                
+
                 "h4" => self::select('h4', 'cms_content', 'presence = 1 and id="' . $this->id_content . '" ' . self::content_status()),
                 "h5" => self::select('h5', 'cms_content', 'presence = 1 and id="' . $this->id_content . '" ' . self::content_status()),
                 "h6" => self::select('h6', 'cms_content', 'presence = 1 and id="' . $this->id_content . '" ' . self::content_status()),
-               
+
                 "content" => self::select('content', 'cms_content', 'presence = 1 and id="' . $this->id_content . '" ' . self::content_status()),
                 "metadata_description" => self::select('metadata_description', 'cms_content', 'presence = 1 and id="' . $this->id_content . '" ' . self::content_status()),
-                
+
                 "metadata_keywords" => self::select('metadata_keywords', 'cms_content', 'presence = 1 and id="' . $this->id_content . '" ' . self::content_status()),
                 "created_by" => self::select('created_by', 'cms_content', 'presence = 1 and id="' . $this->id_content . '"  ' . self::content_status()),
                 "status"    => self::select('status', 'cms_content', 'presence = 1 and id="' . $this->id_content . '" '),
                 "img"  => self::select('img', 'cms_content', 'presence = 1 and id="' . $this->id_content . '" ' . self::content_status()),
                 "input_date"  => date('Y-m-d', strtotime(self::select('input_date', 'cms_content', 'presence = 1 and id="' . $this->id_content . '"'))),
                 "subcontent" => self::subcontent(),
-                "subcontent_action" =>  $this->id_content ?  self::admin("<a href=\"javascript:;\"  class=\"btn-mirrel fnInsert\" data-json='{\"table\":\"cms_widget\",\"section\":\"subcontent".$this->id_content."\"}'> <i class=\"fas fa-plus\"></i> Add Subcontent</a>") : self::admin('<small>Add Content First</small>'),
+                "subcontent_action" =>  $this->id_content ?  self::admin("<a href=\"javascript:;\"  class=\"btn-mirrel fnInsert\" data-json='{\"table\":\"cms_widget\",\"section\":\"subcontent" . $this->id_content . "\"}'> <i class=\"fas fa-plus\"></i> Add Subcontent</a>") : self::admin('<small>Add Content First</small>'),
 
-                "galleries" => self::galleries(), 
-                "galleries_action" =>  $this->id_content ?  self::admin("<a href=\"javascript:;\"  class=\"btn-mirrel fnInsert\" data-json='{\"table\":\"cms_widget\",\"section\":\"".$this->id_content."\"}'> <i class=\"fas fa-plus\"></i> Add Galleries</a>") : self::admin('<small>Add galleries First</small>'),
+                "galleries" => self::galleries(),
+                "galleries_action" =>  $this->id_content ?  self::admin("<a href=\"javascript:;\"  class=\"btn-mirrel fnInsert\" data-json='{\"table\":\"cms_widget\",\"section\":\"" . $this->id_content . "\"}'> <i class=\"fas fa-plus\"></i> Add Galleries</a>") : self::admin('<small>Add galleries First</small>'),
 
-                "banner" => self::banner(), 
-                "banner_action" =>  $this->id_content ?  self::admin("<a href=\"javascript:;\"  class=\"btn-mirrel fnInsert\" data-json='{\"table\":\"cms_widget\",\"section\":\"banner".$this->id_content."\"}'> <i class=\"fas fa-plus\"></i> Add Banner</a>") : self::admin('<small>Add banner First</small>'),
+                "banner" => self::banner(),
+                "banner_action" =>  $this->id_content ?  self::admin("<a href=\"javascript:;\"  class=\"btn-mirrel fnInsert\" data-json='{\"table\":\"cms_widget\",\"section\":\"banner" . $this->id_content . "\"}'> <i class=\"fas fa-plus\"></i> Add Banner</a>") : self::admin('<small>Add banner First</small>'),
 
                 "edit" => $this->id_content ? self::admin(' 
-                <a href="javascript:;"  title="Setting" class="fnModal btn-mirrel"  id="cms_content-3006" data-json=\'{"table":"content","id":"'. $this->id_content.'","title":"Content Edit"}\'><i class="fa fa-cogs" aria-hidden="true"></i>  Content Setting </a>') : self::admin('<small>Add Content First</small>'),
+                <a href="javascript:;"  title="Setting" class="fnModal btn-mirrel"  id="cms_content-3006" data-json=\'{"table":"content","id":"' . $this->id_content . '","title":"Content Edit"}\'><i class="fa fa-cogs" aria-hidden="true"></i>  Content Setting </a>') : self::admin('<small>Add Content First</small>'),
 
                 "data" => array(
                     'name' => ' data-json=\'{"table":"cms_content","column":"name","id":"' . $this->id_content . '"}\'',
-                  
+
                     'h1' => ' data-json=\'{"table":"cms_content","column":"h1","id":"' . $this->id_content . '"}\'',
                     'h2' => ' data-json=\'{"table":"cms_content","column":"h2","id":"' . $this->id_content . '"}\'',
                     'h3' => ' data-json=\'{"table":"cms_content","column":"h3","id":"' . $this->id_content . '"}\'',
                     'h4' => ' data-json=\'{"table":"cms_content","column":"h4","id":"' . $this->id_content . '"}\'',
                     'h5' => ' data-json=\'{"table":"cms_content","column":"h5","id":"' . $this->id_content . '"}\'',
                     'h6' => ' data-json=\'{"table":"cms_content","column":"h6","id":"' . $this->id_content . '"}\'',
-                  
+
                     'metadata_description' => self::admin(' data-json=\'{"table":"cms_content","column":"metadata_description","id":"' . $this->id_content . '"}\''),
                     'metadata_keywords' => self::admin(' data-json=\'{"table":"cms_content","column":"metadata_keywords","id":"' . $this->id_content . '"}\''),
                     'content' => ' data-json=\'{"table":"cms_content","column":"content","id":"' . $this->id_content . '"}\'',
@@ -232,9 +232,9 @@ class Core extends CI_Model
                 "insert" => self::admin('<a href="javascript:;" class="btn-mirrel fnAddContent" data-idpages="' . $this->id_pages . '"><i class="fa fa-plus" aria-hidden="true"></i> Add Content</a>'),
                 "list" => self::content_list(),
             );
-            $status = self::select('status','cms_pages','id="'.$this->id_pages.'"');
+            $status = self::select('status', 'cms_pages', 'id="' . $this->id_pages . '"');
             $data = array(
-                "title" => strip_tags ( self::title()),
+                "title" => strip_tags(self::title()),
                 "login" => self::login(),
                 "metadata" => array(
                     "keywords" => self::metadata_keywords(),
@@ -248,7 +248,7 @@ class Core extends CI_Model
                 "domain" => self::domain(),
                 "themes" => self::themes(),
                 "url" => current_url(),
-                "segment" => $segment, 
+                "segment" => $segment,
                 "pages" =>  $status ?  array(
                     "status" =>  $status,
                     "id" =>  $this->id_pages,
@@ -256,7 +256,7 @@ class Core extends CI_Model
                     "title" => self::select('title', 'cms_pages', 'id = "' . $this->id_pages . '" '),
                     "sub" => self::select('count(id)', 'cms_pages', 'id_pages = "' . $this->id_pages . '" '),
                     "list" => $this->pages_list(),
-                ) : false, 
+                ) : false,
                 "content" => $status ? $content : false,
 
                 "navigation" => self::navigation(),
@@ -337,27 +337,28 @@ class Core extends CI_Model
 
     function title()
     {
+        //strpos($this->uri->segment(1), '.html') == true && 
+        if (strpos($this->uri->segment(1), '.html') == true ) { 
 
-        $data = self::select('name', 'cms_content', 'id="' . $this->id_content . '"');
-        if (self::select('title', 'cms_content', 'id="' . $this->id_content . '"')) {
-            $data = self::select('title', 'cms_content', 'id="' . $this->id_content . '"');
-        }
-
-        if (!$data) {
-            $data = self::select('name', 'cms_pages', 'id="' . $this->id_pages . '"');
-
-            if (self::select('title', 'cms_pages', 'id="' . $this->id_pages . '"')) {
-                $data = self::select('title', 'cms_pages', 'id="' . $this->id_pages . '"');
+            $data = self::select('name', 'cms_content', 'id="' . $this->id_content . '"');
+            if (self::select('title', 'cms_content', 'id="' . $this->id_content . '"')) {
+                $data = self::select('title', 'cms_content', 'id="' . $this->id_content . '"');
             }
+
+            if (!$data) {
+                $data = self::select('name', 'cms_pages', 'id="' . $this->id_pages . '"');
+
+                if (self::select('title', 'cms_pages', 'id="' . $this->id_pages . '"')) {
+                    $data = self::select('title', 'cms_pages', 'id="' . $this->id_pages . '"');
+                }
+            }
+        }else{
+
+            $data = self::select('title', 'cms_pages', 'id="' . $this->id_pages . '"');
         }
 
-
-        if( self::select('id', 'cms_label', 'name="title"')  &&  ( !$this->uri->segment(1) ||  $this->uri->segment(1) == 'home') ){
-            $data = self::select('content', 'cms_label', 'name="title"');
-
-        }
-
-        return $data;
+       
+        return  $data;
     }
 
     function metadata_description()
@@ -373,15 +374,15 @@ class Core extends CI_Model
         }
         if ($this->table == 'cms_content') {
 
-            if( self::select('metadata_description', 'cms_content', 'id="' . $this->id_content . '" and presence = 1') ){
+            if (self::select('metadata_description', 'cms_content', 'id="' . $this->id_content . '" and presence = 1')) {
                 $data =  self::select('metadata_description', 'cms_content', 'id="' . $this->id_content . '" and presence = 1');
-            }else{
+            } else {
                 $data = addslashes(strip_tags(self::select('content', 'cms_content', 'id="' . $this->id_content . '" and presence = 1')));
-            } 
+            }
             $data = preg_replace("/\s|&nbsp;/", " ", $data);
             $data = self::substrwords($data, '160');
         }
-
+  
         return ltrim($data);
     }
 
@@ -393,7 +394,7 @@ class Core extends CI_Model
         if ($this->table == 'cms_content') {
             $data =  self::select('metadata_keywords', 'cms_content', 'id="' . $this->id_content . '" and presence = 1');
         }
-   
+
         $data = preg_replace("/\r|\n/", "", $data);
         return $data;
     }
@@ -425,7 +426,7 @@ class Core extends CI_Model
             $content = self::substrwords($content, 200);
             $content = preg_replace("/\r|\n/", "", $content);
 
-          
+
 
             $temp = array(
                 "id"        => $row->id,
@@ -437,19 +438,19 @@ class Core extends CI_Model
                 "h3"        => $row->h3,
                 "content"   => $content,
                 "img"       => $row->img,
-                "thumb"     => $row->img ?  base_url() . 'public/thumb.php?src=' .$row->img : "",
+                "thumb"     => $row->img ?  base_url() . 'public/thumb.php?src=' . $row->img : "",
                 "day"      => date('l', strtotime($row->input_date)),
                 "date"      => date('d M Y', strtotime($row->input_date)),
 
                 "data" => array(
                     'name' => ' data-json=\'{"table":"cms_content","column":"name","id":"' . $row->id . '"}\'',
-                  
+
                     'h1' => ' data-json=\'{"table":"cms_content","column":"h1","id":"' . $row->id . '"}\'',
                     'h2' => ' data-json=\'{"table":"cms_content","column":"h2","id":"' . $row->id . '"}\'',
                     'h3' => ' data-json=\'{"table":"cms_content","column":"h3","id":"' . $row->id . '"}\'',
                     'metadata_description' => self::admin(' data-json=\'{"table":"cms_content","column":"metadata_description","id":"' . $row->id . '"}\''),
                     'metadata_keywords' => self::admin(' data-json=\'{"table":"cms_content","column":"metadata_keywords","id":"' . $row->id . '"}\''),
-                    'content' => ' data-json=\'{"table":"cms_content","column":"content","id":"' .$row->id . '"}\'', 
+                    'content' => ' data-json=\'{"table":"cms_content","column":"content","id":"' . $row->id . '"}\'',
                 ),
 
 
@@ -580,12 +581,12 @@ class Core extends CI_Model
                     "id"        => $row->id,
                     "h1"        => $row->h1,
                     "thumb"     => base_url() . 'public/thumb.php?src=' . $row->img,
-                    "img"       => $row->img ? $row->img : "https://dummyimage.com/300x200/f4f4f4/333&text=".url_title($row->h1),
+                    "img"       => $row->img ? $row->img : "https://dummyimage.com/300x200/f4f4f4/333&text=" . url_title($row->h1),
                     "content"   => $row->content,
                     "i"         => $i++,
-                    "action"    => self::admin( "<a href='javascript:;' id='widget-".$row->id."' class='handle'>Sorting</a> ".
-                    "<a href='javascript:;' class='fnModal' data-show='".$show."'  id='cms_widget-".$row->id."' data-json='{\"table\":\"widget\",\"id\":\"".$row->id."\",\"title\":\"Gallery Edit\", \"section\":\"galleries\"}'   >Edit</a> ".
-                    "<a href='javascript:;' class='fnDelete' data-json='{\"table\":\"cms_widget\",\"id\":\"".$row->id."\",\"name\":\"".$row->h1."\"}'>Delete</a> "),
+                    "action"    => self::admin("<a href='javascript:;' id='widget-" . $row->id . "' class='handle'>Sorting</a> " .
+                        "<a href='javascript:;' class='fnModal' data-show='" . $show . "'  id='cms_widget-" . $row->id . "' data-json='{\"table\":\"widget\",\"id\":\"" . $row->id . "\",\"title\":\"Gallery Edit\", \"section\":\"galleries\"}'   >Edit</a> " .
+                        "<a href='javascript:;' class='fnDelete' data-json='{\"table\":\"cms_widget\",\"id\":\"" . $row->id . "\",\"name\":\"" . $row->h1 . "\"}'>Delete</a> "),
                 );
 
                 array_push($galleries, $add);
@@ -610,20 +611,20 @@ class Core extends CI_Model
                     "h3"        => $row->h3,
                     "h4"        => $row->h4,
                     "thumb"     => base_url() . 'public/thumb.php?src=' . $row->img,
-                    "img"       => $row->img ? $row->img : "https://dummyimage.com/300x200/f4f4f4/333&text=".url_title($row->h1),
+                    "img"       => $row->img ? $row->img : "https://dummyimage.com/300x200/f4f4f4/333&text=" . url_title($row->h1),
                     "content"   => $row->content,
                     "i"         => $i++,
                     "data" =>  array(
                         'h1' => !self::login() ?: ' data-json=\'{"table":"cms_widget","column":"h1","id":"' . $row->id . '"}\'',
-                        'h2' => !self::login() ?:' data-json=\'{"table":"cms_widget","column":"h2","id":"' . $row->id . '"}\'',
-                        'h3' => !self::login() ?:' data-json=\'{"table":"cms_widget","column":"h3","id":"' . $row->id . '"}\'',
-                        'h4' => !self::login() ?:' data-json=\'{"table":"cms_widget","column":"h4","id":"' . $row->id . '"}\'',
-                        'content' => !self::login() ?:' data-json=\'{"table":"cms_widget","column":"content","id":"' . $row->id . '"}\'',
+                        'h2' => !self::login() ?: ' data-json=\'{"table":"cms_widget","column":"h2","id":"' . $row->id . '"}\'',
+                        'h3' => !self::login() ?: ' data-json=\'{"table":"cms_widget","column":"h3","id":"' . $row->id . '"}\'',
+                        'h4' => !self::login() ?: ' data-json=\'{"table":"cms_widget","column":"h4","id":"' . $row->id . '"}\'',
+                        'content' => !self::login() ?: ' data-json=\'{"table":"cms_widget","column":"content","id":"' . $row->id . '"}\'',
                     ),
-    
-                    "action"    => self::admin( "<a href='javascript:;' id='widget-".$row->id."' class='handle'> <i class='fas fa-arrows-alt'></i> </a> ".
-                    "<a href='javascript:;' class='fnModal' data-show='".$show."'  id='cms_widget-".$row->id."' data-json='{\"table\":\"widget\",\"id\":\"".$row->id."\",\"title\":\"Gallery Edit\", \"section\":\"galleries\"}'   ><i class='far fa-edit'></i></a> ".
-                    "<a href='javascript:;' class='fnDelete' data-json='{\"table\":\"cms_widget\",\"id\":\"".$row->id."\",\"name\":\"".$row->h1."\"}'><i class='far fa-trash-alt'></i></a> "),
+
+                    "action"    => self::admin("<a href='javascript:;' id='widget-" . $row->id . "' class='handle'> <i class='fas fa-arrows-alt'></i> </a> " .
+                        "<a href='javascript:;' class='fnModal' data-show='" . $show . "'  id='cms_widget-" . $row->id . "' data-json='{\"table\":\"widget\",\"id\":\"" . $row->id . "\",\"title\":\"Gallery Edit\", \"section\":\"galleries\"}'   ><i class='far fa-edit'></i></a> " .
+                        "<a href='javascript:;' class='fnDelete' data-json='{\"table\":\"cms_widget\",\"id\":\"" . $row->id . "\",\"name\":\"" . $row->h1 . "\"}'><i class='far fa-trash-alt'></i></a> "),
                 );
 
                 array_push($data, $add);
@@ -632,7 +633,7 @@ class Core extends CI_Model
         return  $data;
     }
 
-    
+
     function banner()
     {
         $galleries    = array();
@@ -646,12 +647,12 @@ class Core extends CI_Model
                     "id"        => $row->id,
                     "h1"        => $row->h1,
                     "thumb"     => base_url() . 'public/thumb.php?src=' . $row->img,
-                    "img"       => $row->img ? $row->img : "https://dummyimage.com/800x200/0176C9/fff&text=".url_title($row->h1),
+                    "img"       => $row->img ? $row->img : "https://dummyimage.com/800x200/0176C9/fff&text=" . url_title($row->h1),
                     "content"   => $row->content,
                     "i"         => $i++,
-                    "action"    => self::admin( "<a href='javascript:;' id='widget-".$row->id."' class='handle'>Sorting</a> ".
-                    "<a href='javascript:;' class='fnModal' data-show='".$show."'  id='cms_widget-".$row->id."' data-json='{\"table\":\"widget\",\"id\":\"".$row->id."\",\"title\":\"Gallery Edit\", \"section\":\"galleries\"}'   >Edit</a> ".
-                    "<a href='javascript:;' class='fnDelete' data-json='{\"table\":\"cms_widget\",\"id\":\"".$row->id."\",\"name\":\"".$row->h1."\"}'>Delete</a> "),
+                    "action"    => self::admin("<a href='javascript:;' id='widget-" . $row->id . "' class='handle'>Sorting</a> " .
+                        "<a href='javascript:;' class='fnModal' data-show='" . $show . "'  id='cms_widget-" . $row->id . "' data-json='{\"table\":\"widget\",\"id\":\"" . $row->id . "\",\"title\":\"Gallery Edit\", \"section\":\"galleries\"}'   >Edit</a> " .
+                        "<a href='javascript:;' class='fnDelete' data-json='{\"table\":\"cms_widget\",\"id\":\"" . $row->id . "\",\"name\":\"" . $row->h1 . "\"}'>Delete</a> "),
                 );
 
                 array_push($galleries, $add);
@@ -772,8 +773,8 @@ class Core extends CI_Model
         }
         $id = self::select('id', 'cms_label', 'name="' . $name . '"');
         $content = array(
-            "content" => self::select('content', 'cms_label', 'name="' . $name . '"'), 
-            "attributes" => 'data-json=\'{"table":"cms_label","column":"content","id":"'.$id .'"}\'',
+            "content" => self::select('content', 'cms_label', 'name="' . $name . '"'),
+            "attributes" => 'data-json=\'{"table":"cms_label","column":"content","id":"' . $id . '"}\'',
         );
         return $content;
     }
@@ -858,7 +859,7 @@ class Core extends CI_Model
                     'content' => ' data-json=\'{"table":"cms_widget","column":"content","id":"' . $row->id . '"}\'',
                 ),
 
-             
+
                 "modal" => self::admin('<a href="javascript:;" title="Edit" class="btn-mirrel fnModal" id=\'cms_widget-' . $row->id . '\' data-json=\'{"table":"widget","id":"' . $row->id . '","title":"Widget Edit", "section":"' . $row->section . '"}\'> <i class="fas fa-edit"></i> Edit </a>'),
 
 
@@ -1275,7 +1276,8 @@ class Core extends CI_Model
 
                 array_push($data, $temp);
             }
-        } else if ($type == 'catalog' || $type == "") { }
+        } else if ($type == 'catalog' || $type == "") {
+        }
 
         return $data;
     }

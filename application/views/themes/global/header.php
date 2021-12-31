@@ -8,6 +8,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <?php echo $core['opengraph']; ?>
+  <link rel="shortcut icon" href="<?php echo base_url(); ?>icon.ico" type="image/ico" />
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap');
     @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap');
@@ -25,6 +26,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
   <link href="<?php echo base_url(); ?>assets/css/colors/red.css" rel="stylesheet" id="color-opt">
   <link href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css" rel="stylesheet">
 
+  <script src="//cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css"></script>
   <link href="<?php echo base_url(); ?>assets/css/customExa.css" rel="stylesheet">
 
   <?php $this->load->view('admin/header'); ?>

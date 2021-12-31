@@ -11,6 +11,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                         <h1 class="display-4 fw-bold mb-3 fnText" <?php echo $custom['koisBanner'][0]['data']['h1']; ?>> <?php echo $custom['koisBanner'][0]['h1']; ?></h1>
                         <h3 class="fnText" <?php echo $custom['koisBanner'][0]['data']['content']; ?>> <?php echo $custom['koisBanner'][0]['content']; ?></h3>
                         <?php echo $custom['koisBanner'][0]['modal']; ?>
+                        <?php echo $core['content']['id'] ? $core['content']['edit']:$core['content']['insert']; ?>
                     </div>
                 </div>
             </div>

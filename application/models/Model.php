@@ -387,7 +387,7 @@ class Model extends CI_Model
 
 
       case "umpan-balik-pelanggan":
-        $data = [ 
+        $data = [
           "umpanBpWidget1" => $this->core->cms_widget('umpanBpWidget1'),
         ];
         return $data;
@@ -396,19 +396,28 @@ class Model extends CI_Model
 
       case "operasi-terdistribusi":
         $data = [
-          "opDisWidget1" => $this->core->cms_widget('opDisWidget1'), 
+          "opDisWidget1" => $this->core->cms_widget('opDisWidget1'),
         ];
         return $data;
         break;
 
 
-        case "intelegensi-bisnis":
-          $data = [
-            "BIWidget1" => $this->core->cms_widget('BIWidget1'), 
-          ];
-          return $data;
-          break;
+      case "intelegensi-bisnis":
+        $data = [
+          "BIWidget1" => $this->core->cms_widget('BIWidget1'),
+        ];
+        return $data;
+        break;
 
+      case "faq":
+        $data = [
+          "faqBanner" => $this->core->cms_widget('faqBanner'),
+          "faqSub" => $this->core->cms_label('faqSub'),
+          "fabContent" => $this->core->cms_widget('fabContent'),
+         
+        ];
+        return $data;
+        break;
       default:
         return false;
     }

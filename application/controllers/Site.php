@@ -54,6 +54,7 @@ class Site extends CI_Controller
         $themes =  $data['core']['themes'] == 'index' ? $segment1 : $data['core']['themes'];
         $data['custom'] = $this->model->custom(  $themes);
 
+       
  
         $this->core->data($data);
         $this->load->view('themes/global/header', $data);

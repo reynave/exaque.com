@@ -57,33 +57,42 @@ defined('BASEPATH') or exit('No direct script access allowed');
                     <div>
                         <?php echo $core['content']['edit']; ?>
                     </div>
-                    <div><small>Description this project</small></div>
+
                     <div class="fnRichtext cms_content" <?php echo $core['content']['data']['content']; ?>> <?php echo $core['content']['content']; ?> </div>
 
                 </div>
                 <div class="col-md-4 col-12 order-1 order-md-2">
                     <div class="border shadow rounded p-3">
                         <div>
-                            Porject Info
+                            Informasi Proyek:
                         </div>
                         <hr>
                         <div class="mb-3">
                             <img src="<?php echo $core['content']['img'] ?>" alt="<?php echo $core['content']['name']; ?>" width="100%">
                         </div>
                         <div class="mb-3">
-                            <b>Client</b> <span class="fnText px-1 <?php echo $core['login'] == true ? "form-control" : ""; ?>" <?php echo $core['content']['data']['h2'] ?>> <?php echo $core['content']['h2'] ?></span>
+                            <b>Klien</b> <span class="fnText px-1 <?php echo $core['login'] == true ? "form-control" : ""; ?>" <?php echo $core['content']['data']['h2'] ?>> <?php echo $core['content']['h2'] ?></span>
                         </div>
                         <div class="mb-3">
-                            <b>Category</b><span class="fnText px-1 <?php echo $core['login'] == true ? "form-control" : ""; ?>" <?php echo $core['content']['data']['h1'] ?>> <?php echo $core['content']['h1'] ?></span>
+                            <b>Kategori</b><span class="fnText px-1 <?php echo $core['login'] == true ? "form-control" : ""; ?>" <?php echo $core['content']['data']['h1'] ?>> <?php echo $core['content']['h1'] ?></span>
                         </div>
                         <div class="mb-3">
-                            <b>Date</b> <span class="fnText px-1 <?php echo $core['login'] == true ? "form-control" : ""; ?>" <?php echo $core['content']['data']['h5'] ?>> <?php echo $core['content']['h5'] ?></span>
+                            <b>Tipe Solusi</b> <span class="fnText px-1 <?php echo $core['login'] == true ? "form-control" : ""; ?>" <?php echo $core['content']['data']['h5'] ?>> <?php echo $core['content']['h5'] ?></span>
                         </div>
                         <div class="mb-3">
-                            <b>Website</b> <span class="fnText px-1 <?php echo $core['login'] == true ? "form-control" : ""; ?>" <?php echo $core['content']['data']['h3'] ?>> <?php echo $core['content']['h3'] ?></span>
+                            <b> Situs web</b> <span class=" px-1">
+
+                                <?php if ($core['login'] == true) { ?>
+                                    <span class="fnText px-1 form-control" <?php echo $core['content']['data']['h3'] ?>> <?php echo $core['content']['h3'] ?></span>
+                                <?php } else {
+                                ?>
+                                    <a href="<?php echo $core['content']['h3'] ?>" target="_blank"><?php echo $core['content']['h3'] ?></a>
+                                <?php
+                                } ?>
+                            </span>
                         </div>
                         <div class="mb-3">
-                            <b>Location</b> <span class="fnText px-1 <?php echo $core['login'] == true ? "form-control" : ""; ?>" <?php echo $core['content']['data']['h4'] ?>> <?php echo $core['content']['h4'] ?></span>
+                            <b>Lokasi</b> <span class="fnText px-1 <?php echo $core['login'] == true ? "form-control" : ""; ?>" <?php echo $core['content']['data']['h4'] ?>> <?php echo $core['content']['h4'] ?></span>
                         </div>
                     </div>
                 </div>
@@ -98,19 +107,19 @@ defined('BASEPATH') or exit('No direct script access allowed');
                 <div class="col-12 filters-group-wrap">
                     <div class="filters-group">
                         <ul class="container-filter list-inline mb-0 filter-options text-center">
-                            <li class="list-inline-item categories-name border text-dark rounded active" data-group="all">All</li>
+                            <li class="list-inline-item categories-name border text-dark rounded active" data-group="all">Semua</li>
 
                             <?php
                             $q =   $this->db->query("SELECT h1, COUNT(h1) AS 'total' 
                             FROM cms_content 
-                            WHERE id_pages = ".$core['pages']['id']." AND  h1 != ''  and presence = 1 and status = 1
+                            WHERE id_pages = " . $core['pages']['id'] . " AND  h1 != ''  and presence = 1 and status = 1
                             GROUP BY h1
                             ORDER BY h1 ASC
                             ");
                             $i = 1;
                             foreach ($q->result_array() as $rec) {
                             ?>
-                                <li class="list-inline-item categories-name border text-dark rounded" data-group="<?php echo url_title($rec['h1'])?>"><?php echo $rec['h1']?></li>
+                                <li class="list-inline-item categories-name border text-dark rounded" data-group="<?php echo url_title($rec['h1']) ?>"><?php echo $rec['h1'] ?></li>
                             <?php
                             }
 
@@ -127,6 +136,16 @@ defined('BASEPATH') or exit('No direct script access allowed');
             <div class="row">
                 <div class="col-12">
                     <?php echo $core['content']['insert']; ?>
+
+                    <?php if ($core['login']) { ?>
+                        <ul class="fnSortable">
+                            <?php foreach ($core['content']['list'] as $r) { ?>
+                                <li>
+                                    <?php echo $r['action']; ?> <?php echo $r['name']; ?>
+                                </li>
+                            <?php } ?>
+                        </ul>
+                    <?php } ?>
                 </div>
             </div>
         </div>
@@ -134,7 +153,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
             <div id="grid" class="row mt-4">
 
                 <?php foreach ($core['content']['list'] as $r) { ?>
-                    <div class="col-lg-3 col-md-6 col-12 spacing picture-item" data-groups='["<?php echo $r['h1'] ?>"]'>
+                    <div class="col-lg-4 col-md-6 col-12 spacing picture-item" data-groups='["<?php echo $r['h1'] ?>"]'>
                         <div class="card border-0 work-container work-grid position-relative d-block overflow-hidden rounded">
                             <div class="card-body p-0">
                                 <a href="<?php echo $r['href']; ?>">
@@ -143,7 +162,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
                                 <div class="content bg-white p-3">
                                     <h5 class="mb-0"><a href="<?php echo $r['href']; ?>" class="text-dark title"><?php echo $r['name'] ?></a></h5>
                                     <h6 class="text-muted tag mb-0"><?php echo $r['h1'] ?></h6>
-                                    <?php echo $r['action'];?>
                                 </div>
                             </div>
                         </div>

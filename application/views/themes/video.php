@@ -6,6 +6,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
 <section class="section noBanner">
     <div class="container">
         <div class="row">
+            <div class="col-12">
+                <?php echo $core['content']['id'] ? $core['content']['edit']:$core['content']['insert']; ?>
+            </div>
             <?php foreach ($custom['library_video'] as $r) { ?>
                 <div class="col-lg-3 col-md-4 col-6 mb-4 pb-2 ">
                     <div class="style01"> 

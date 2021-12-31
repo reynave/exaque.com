@@ -1,60 +1,105 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 ?>
-
-<!-- Start -->
-<section class="section noBanner">
+<!-- Hero Start -->
+<section class="d-table w-100 text-white" style="background: url('<?php echo $custom['faqBanner'][0]['img']; ?>');background-size: cover; padding:150px 0px 140px 0px">
     <div class="container">
-        <div class="row">
-            <div class="col-lg-4 col-md-4 col-12 ">
-                <div class="sticky-bar bg-light rounded shadow border">
-                    <div class="px-3 pt-3">
-                        <b>FAQ</b>
+        <div class="row ">
+            <div class="col-12">
+                <div class="title-heading my-4 text-center">
+                    <h1 class="heading my-3 fnText" <?php echo $custom['faqBanner'][0]['data']['h1']; ?>><?php echo $custom['faqBanner'][0]['h1']; ?></h1> 
+                    <div class="mt-4 pt-2">
+                        <?php echo $custom['faqBanner'][0]['modal']; ?>
+                        <?php echo $core['content']['id'] ? $core['content']['edit'] : $core['content']['insert']; ?>
                     </div>
-                    <ul class="list-unstyled sidebar-nav mb-0 py-2" id="navmenu-nav">
-                        <?php foreach ($core['content']['list'] as $row) { ?>
-                            <li class="navbar-item"><a href="<?php echo $row['href'] ?>" class="navbar-link"><?php echo $row['name'] ?></a></li>
-                        <?php } ?>
-                    </ul>
-                    <?php echo $core['content']['insert']; ?>
                 </div>
             </div>
 
-            <div class="col-lg-8 col-md-8 col-12 mt-4 pt-2 mt-sm-0 pt-sm-0">
-                <div class="row row-cols-1 ms-lg-2">
-                    <div class="col" id="typography">
-                        <div class="component-wrapper rounded shadow ">
-                            <div class="p-3">
-                                <small><b>Title for SEO</b></small>
-                                <div class="fnText form-control"><?php echo $core['content']['name'] ?></div>
-                                <small><b>Description for SEO</b></small>
-                                <div class="fnText form-control" <?php echo $core['content']['data']['content'] ?>><?php echo $core['content']['content'] ?> </div>
-                            </div>
+        </div>
+        <!--end row-->
+    </div>
+    <!--end container-->
+</section>
 
 
-                            <?php foreach ($core['content']['subcontent'] as $row) { ?>
-                                <div class="p-3 mb-2 ">
-                                   <div> <small>ID <?php echo $row['id'] ?></small></div>
-                                    <small> Question:</small>
-                                    <div class="fnText  form-control"  <?php echo $row['data']['h1'] ?>> <?php echo $row['h1'] ?> </div>
-                                 
-                                    <small> Answer:</small>
-                                    <div class="fnRichtext  form-control" <?php echo $row['data']['content'] ?>>  <?php echo $row['content'] ?>  </div>
-
-                                   <div>
-                                    <?php echo $row['action'] ?>
-                                   </div>
-                                </div> 
-                            <?php } ?>
+<!--end section-->
+<div class="position-relative">
+    <div class="shape overflow-hidden text-white">
+        <svg viewBox="0 0 2880 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 48H1437.5H2880V0H2160C1442.5 52 720 0 720 0H0V48Z" fill="currentColor"></path>
+        </svg>
+    </div>
+</div>
+<!-- Start -->
+<section class="section  ">
+    <div class="container">
+        <div class="row">
 
 
+            <div class="col-lg-8 col-md-8 col-12 mt-4 pt-2 mt-sm-0 pt-sm-0 mb-3">
+                <!-- <div class="fnRichtext cms_content" <?php echo $core['content']['data']['content'] ?>><?php echo $core['content']['content'] ?> </div>
 
-                            <div class="px-3">
-                                <?php echo $core['content']['subcontent_action']; ?>
-                            </div>
+                <br><br>
+               
+                <div class="row">
+                    <?php $i = 0;
+                    foreach ($custom['fabContent'] as $row) {
+                        $i++; ?>
+                        <div class="col-4 mb-3">
+                            <a href="<?php echo base_url() . strtolower(url_title($core['pages']['name'])); ?>#faq<?php echo url_title($row['id']) ?>" class="block-btn">
+                                <div class="border rounded-sm shadow-sm">
+                                    <div class="my-2">
+                                    <div class="nozero">
+                                        <span class="no "> <?php echo $i; ?></span>
+                                    </div>
+                                    </div>
+                                    <div class="block-btn-text ">
+                                        <?php echo $row['h1'] ?>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    <?php   } ?>
+                </div> -->
+
+
+                <?php $i = 0;
+                foreach ($custom['fabContent'] as $row) {
+                    $i++; ?>
+                    <div class="faqContent py-4" id="faq<?php echo $row['id']?>">
+                        <div class="faqContentTitle "> 
+                             <h3 class="py-3 " > <?php echo $i;?>  <span class="fnText" <?php echo $row['data']['h1'];?>> <?php echo $row['h1'];?> </span>  </h3>
+                        </div>
+
+                        <div class="py-4">
+                            <div class="fnRichtext"  <?php echo $row['data']['content'];?>><?php echo $row['content']?></div>
                         </div>
                     </div>
+                <?php } ?>
+            </div>
+
+            <div class="col-lg-4 col-md-4 col-12">
+                <div class="sticky-bar bg-light    ">
+                    <div class="px-3 pt-3">
+                        <h4 class="fnText text-primary pb-2" <?php echo $custom['faqSub']['attributes']; ?>>  <?php echo $custom['faqSub']['content']; ?> </h4>
+                    </div>
+
+
+                    <?php $i = 0;
+                    foreach ($custom['fabContent'] as $row) {
+                        $i++; ?>
+                        <div class="blocklist b<?php echo url_title($row['id']) ?>" >
+                            <a class="anchor" data-id="<?php echo url_title($row['id']) ?>" href="<?php echo base_url() . strtolower(url_title($core['pages']['name'])); ?>#faq<?php echo url_title($row['id']) ?>"><?php echo $i.'. '.$row['h1'] ?></a>
+                            <div class="arrow1">
+                            </div>
+                            <?php echo $row['modal']; ?>   
+                        </div>
+                    <?php } ?>
+
+
                 </div>
+
+               
             </div>
         </div>
 

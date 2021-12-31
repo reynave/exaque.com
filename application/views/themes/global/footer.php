@@ -101,23 +101,26 @@ defined('BASEPATH') or exit('No direct script access allowed');
 <script src="<?php echo base_url(); ?>assets/js/app.js"></script>
 <!--Note: All important javascript like page loader, menu, sticky menu, menu-toggler, one page menu etc. -->
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-<script src="//cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css"></script>
 <script src="//cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
 
+<?php if (!$core['login']) { ?>
+    <script type="text/javascript" src="<?php echo base_url(); ?>admin/js/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+<?php } ?>
 
 <?php $this->load->view('admin/footer'); ?>
 <script>
     $(document).ready(function() {
+
         $('#example').DataTable({
             lengthMenu: [4],
-            lengthChange: false, 
+            lengthChange: false,
             searching: false,
             ordering: false,
             "language": {
                 "paginate": {
                     "previous": "Sebelumnya",
                     "next": "Berikutnya"
-                    
+
                 }
             }
         });
@@ -285,7 +288,22 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 
         });
+
+        $('.anchor').on('click',function(){ 
+            $('.blocklist').removeClass('active');
+            
+            $('.b'+$(this).data("id")).addClass('active');
+        });
+
+        if(window.location.hash) {
+            console.log(window.location.hash);
+        }
+      
     });
+
+   
+   
+  
 </script>
 
 </body>

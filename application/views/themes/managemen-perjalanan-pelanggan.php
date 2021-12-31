@@ -201,7 +201,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                         </div>
 
                         <div class="col-12 col-md-3 text-center">
-                            <a href="<?php echo $r['href']; ?>" class="btn btn-sm btn-primary">Permohonan Demo</a>
+                            <a href="<?php echo $r['href']; ?>" class="btn btn-outline-primary">Permohonan Demo</a>
                         </div>
 
                     </div>
