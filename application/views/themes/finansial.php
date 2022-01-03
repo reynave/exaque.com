@@ -96,11 +96,11 @@ defined('BASEPATH') or exit('No direct script access allowed');
     ?>
         <div class="container my-4 ">
             <div class="row">
-                <div class="col-6 text-justify order-2 order-md-<?php echo $i % 2 == 1 ? "1" : "2" ?>"> 
+                <div class="col-12 col-md-6 text-justify order-2 order-md-<?php echo $i % 2 == 1 ? "1" : "2" ?>"> 
                     <div class="fnRichtext" <?php echo $r['data']['content']; ?>><?php echo $r['content']; ?> </div>
                     <?php echo $r['modal']; ?>
                 </div>
-                <div class="col-6 text-center order-1 order-md-<?php echo $i % 2 == 1 ? "2" : "1" ?>">
+                <div class="col-12 col-md-6 text-center order-1 order-md-<?php echo $i % 2 == 1 ? "2" : "1" ?>">
                     <img src="<?php echo $r['img']; ?>" width="80%">
                 </div>
             </div>

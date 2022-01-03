@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 ?>
-<section class="bg-half-170 d-table w-100" style="background: url('<?php echo $custom['mpBanner'][0]['img']; ?>');">
+<section class="bg-half-170 d-table w-100" style="background: url('<?php echo $custom['mpBanner'][0]['img']; ?>');    background-size: cover;">
 
     <div class="container">
         <div class="row mt-5 justify-content-center">
@@ -46,11 +46,11 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
         <div class="container my-3 ">
             <div class="row">
-                <div class="col-6">
+                <div class="col-md-6 col-12">
                     <img src="<?php echo $core['content']['img'] ?>" width="100%" alt="exaque images">
                 </div>
 
-                <div class="col-6">
+                <div class="col-md-6 col-12">
                     <div class="fnRichtext" <?php echo $core['content']['data']['content'] ?>><?php echo $core['content']['content']; ?></div>
                 </div>
                 <?php echo $core['content']['id'] ?  $core['content']['edit'] :  $core['content']['insert']; ?>
@@ -78,7 +78,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
         <div class="container my-4 ">
             <div class="row">
                 <?php foreach ($custom['mpW1'] as $r) { ?>
-                    <div class="col-6 text-justify">
+                    <div class="col-md-6 col-12 text-justify">
                         <h5 class="fnText" <?php echo $r['data']['h1']; ?>><?php echo $r['h1']; ?></h5>
 
                         <div class="fnRichtext" <?php echo $r['data']['content']; ?>><?php echo $r['content']; ?> </div>
@@ -103,12 +103,12 @@ defined('BASEPATH') or exit('No direct script access allowed');
         <div class="container my-4 ">
             <div class="row">
                 <?php foreach ($custom['mpW2'] as $r) { ?>
-                    <div class="col-6">
+                    <div class="col-md-6 col-12">
                         <div class="fnRichtext" <?php echo $r['data']['content']; ?>><?php echo $r['content']; ?> </div>
                         <div><?php echo $r['modal']; ?></div>
                     </div>
 
-                    <div class="col-6 text-center">
+                    <div class="col-md-6 col-12 text-center">
                         <img src="<?php echo $r['img'] ?>" width="80%">
                     </div>
 
@@ -127,8 +127,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
                     <div class="col-12 text-center">
 
-                        <div class="style02">
-                            <img src="<?php echo $r['img'] ?>" width="100%" class="img-fluid bgnhover" data-bs-toggle="modal" data-bs-target="#videopopup<?php echo $r['id'] ?>" class="rounded" width="100%" alt="exaque">
+                        <div class="style02 py-3">
+                            <img src="<?php echo $r['img'] ?>" class="imgExaBig bgnhover" data-bs-toggle="modal" data-bs-target="#videopopup<?php echo $r['id'] ?>" class="rounded"  alt="exaque">
 
                             <div class="style02-01" data-bs-toggle="modal" data-bs-target="#videopopup<?php echo $r['id'] ?>">
                                 <img src="<?php echo base_url() ?>assets/icon/icons8-youtube-240.png" width="60">
@@ -158,13 +158,13 @@ defined('BASEPATH') or exit('No direct script access allowed');
                     <div class="col-12">
                         <h1 class="fnText" <?php echo $r['data']['h1']; ?>><?php echo $r['h1']; ?></h1>
                     </div>
-                    <div class="col-6">
+                    <div class="col-md-6 col-12">
                         <div class="fnRichtext" <?php echo $r['data']['content']; ?>><?php echo $r['content']; ?> </div>
 
                         <?php echo $r['modal']; ?>
                     </div>
 
-                    <div class="col-6 text-center">
+                    <div class="col-md-6 col-12 text-center">
                         <img src="<?php echo $r['img'] ?>" width="80%">
                     </div>
                 <?php } ?>
@@ -183,11 +183,11 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
     <div class="container my-3 ">
         <div class="row no-gutters">
-            <div class="col-1">
+            <div class="col-md-1 col-3">
                 <img src="<?php echo base_url() ?>assets/gif/hug.gif" width="100%">
 
             </div>
-            <div class="col-11">
+            <div class="col-md-11 col-12">
                 <?php foreach ($bodyFooterQmatic as $r) { ?>
                     <div class="row">
 

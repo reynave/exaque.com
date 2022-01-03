@@ -37,7 +37,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
         <div class="container my-3 ">
             <div class="row align-items-center">
-                <div class="col-md-5 col-12 order-1 order-lg-2">
+                <div class="col-md-5 col-6 offset-3 offset-sm-0 order-1 order-lg-2">
                     <img src=" <?php echo $core['content']['img']; ?>" class="img-fluid" alt="">
                 </div>
                 <div class="col-md-7 mt-4 pt-2 mt-sm-0 pt-sm-0 col-12 order-2 order-lg-1">
@@ -114,10 +114,10 @@ defined('BASEPATH') or exit('No direct script access allowed');
         <div class="container ">
             <div class="row">
                 <?php foreach ($custom['maFull1'] as $r) { ?>
-                    <div class="col-5 ">
+                    <div class="col-md-5 col-12">
                         <img src="<?php echo $r['img'] ?>" class="img-fluid">
                     </div>
-                    <div class="col-7 ">
+                    <div class="col-md-7  col-12">
                         <h3 class="fnText" <?php echo $r['data']['h1'] ?>> <?php echo $r['h1'] ?> </h3>
                         <div class="fnText py-1" <?php echo $r['data']['content'] ?>> <?php echo $r['content'] ?> </div>
 

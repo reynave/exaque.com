@@ -2,7 +2,7 @@
 defined('BASEPATH') or exit('No direct script access allowed');
 ?>
 <!-- Hero Start -->
-<section class="bg-half-170 d-table w-100" style="background: url('<?php echo $custom['poBanner'][0]['img']; ?>');">
+<section class="bg-half-170 d-table w-100" style="background: url('<?php echo $custom['poBanner'][0]['img']; ?>');background-size: cover;">
 
     <div class="container">
         <div class="row mt-5 justify-content-center">

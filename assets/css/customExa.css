@@ -217,11 +217,18 @@ a {
     line-height: 130% !important; 
     margin: 0px;
 }
+
+.imgExaBig{
+    width: 70%;
+}
 @media only screen and (max-width: 600px) {
     .ulwidget li {
         float: left;
         width: 100%;
         margin-bottom: 10px;
+    }
+    .imgExaBig{
+        width: 100%;
     }
 }
 .homeGridImg{
@@ -282,7 +289,7 @@ table.dataTable.no-footer {
 .style01 .style01-01 {
     position: absolute;
     width: 100%;
-    top: 22%;
+    top: 28%;
     text-align: center;
 
 
@@ -432,4 +439,13 @@ iframe {
     border-left: 17px solid transparent;
     border-right: 17px solid transparent;
     border-top: 10px solid #8f002f;
+} 
+
+.activeLi a{
+    font-weight: bold;
+}
+
+.tab-pane img{
+    max-width: 100% !important;
+    height: auto !important;
 }

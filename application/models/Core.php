@@ -1255,7 +1255,7 @@ class Core extends CI_Model
             select *, REPLACE( LOWER(name), "' . $q . '", "<strong>' . $q . '</strong>" ) AS "search_name"
             from cms_content 
             where 
-            name   like "%' . $q . '%" 
+            (name   like "%' . $q . '%"  OR title   like "%' . $q . '%" OR content   like "%' . $q . '%" )
             and     presence = 1 and status = 1 
             order by input_date DESC';
             $query = $this->db->query($q);

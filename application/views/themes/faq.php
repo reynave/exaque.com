@@ -66,7 +66,12 @@ defined('BASEPATH') or exit('No direct script access allowed');
                 <?php $i = 0;
                 foreach ($custom['fabContent'] as $row) {
                     $i++; ?>
-                    <div class="faqContent py-4" id="faq<?php echo $row['id']?>">
+
+                    <div class="py-2" id="faq<?php echo $row['id']?>">
+                    <br> &nbsp; &nbsp; <br> <br>
+                    </div>
+
+                    <div class="faqContent py-4" >
                         <div class="faqContentTitle "> 
                              <h3 class="py-3 " > <?php echo $i;?>  <span class="fnText" <?php echo $row['data']['h1'];?>> <?php echo $row['h1'];?> </span>  </h3>
                         </div>

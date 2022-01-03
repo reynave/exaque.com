@@ -64,7 +64,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
             <?php
             foreach ($custom['home1'] as $row) {
             ?>
-                <div class="col-lg-3 col-md-6 col-6 mb-4 pb-2">
+                <div class="col-lg-3 col-md-6 col-12 mb-4 pb-2">
                     <div class="homeGrid   border-0  ">
                         <div class="position-relative">
                             <img src="<?php echo $row['img']; ?>" class="card-img-top" alt="...">
@@ -133,7 +133,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
             <?php
             foreach ($custom['home3'] as $row) {
             ?>
-                <div class="col-lg-3 col-md-6 col-6 mb-4 pb-2">
+                <div class="col-lg-3 col-md-6 col-12 mb-4 pb-2">
                     <div class="homeGrid   border-0  ">
                         <div class="homeGridImg" >
                             <img src="<?php echo $row['img']; ?>" class="card-img-top" alt="...">

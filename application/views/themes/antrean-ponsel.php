@@ -54,7 +54,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
                         <img src="<?php echo $row['img'] ?>" width="100%" class="img-fluid bgnhover" data-bs-toggle="modal" data-bs-target="#videopopup<?php echo $row['id'] ?>" class="rounded" width="100%" alt="exaque">
 
-                        <div class="style02-01" data-bs-toggle="modal" data-bs-target="#videopopup<?php echo $row['id'] ?>"><i class="fab fa-red fa-3x fa-youtube"></i> </div>
+                        <div class="style02-01" data-bs-toggle="modal" data-bs-target="#videopopup<?php echo $row['id'] ?>"><img src="<?php echo base_url() ?>assets/icon/icons8-youtube-240.png" width="60"> </div>
                     <?php } else { ?>
                         <img src="<?php echo $row['img']; ?>" width="90%">
                     <?php } ?>
@@ -154,10 +154,10 @@ defined('BASEPATH') or exit('No direct script access allowed');
 <section class="section bg-light">
     <div class="container my-3 ">
         <div class="row no-gutters">
-            <div class="col-1">
+            <div class="col-md-1 col-3">
                 <img src="<?php echo base_url() ?>assets/gif/hug.gif" width="100%">
             </div>
-            <div class="col-11">
+            <div class="col-md-11 col-12">
                 <?php foreach ($bodyFooter as $r) { ?>
                     <div class="row">
                         <div class="col-12 col-md-8">

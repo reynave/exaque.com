@@ -11,46 +11,13 @@ defined('BASEPATH') or exit('No direct script access allowed');
                 <?php if ($core['table'] != 'cms_content') { ?>
                     <div class="row">
                         <?php
-
-                        if ($this->input->get('year')) {
-
-                            $tt  = $this->db->query(" select * 
-    FROM cms_content  
-    WHERE id_pages = 11648 and YEAR(input_date) = " . $this->input->get('year') . " 
-    and status = 1 and presence =1
-    order by  input_date   
-    ");
-                            $total = count($tt->result_array());
-                        } else {
-
-                            $tt  = $this->db->query(" select * 
-    FROM cms_content  
-    WHERE id_pages = 11648
-    and status = 1 and presence =1
-    order by  input_date   
-    ");
-                            $total = count($tt->result_array());
-                        }
-                        $max = 6;
-                        $i = 1;
-                        $getPages = $this->input->get("p");
-                        if (!$getPages || $getPages == 0) {
-                            $getPages = 1;
-                        }
-                        if ($getPages > ceil($total / $max)) {
-                            $getPages = ceil($total / $max);
-                        }
-
-                        $curr = $this->input->get('p');
-                        if ($this->input->get('p') == "") {
-                            $curr = 1;
-                        }
                         if ($this->input->get('year')) {
                             $list  = $this->db->query("SELECT *,  CONCAT('" . base_url() . "',url) AS 'href',  DATE_FORMAT(input_date, '%d %b  %Y')  as 'date'
                             FROM cms_content  
                             WHERE id_pages = 11648 and YEAR(input_date) = " . $this->input->get('year') . " 
                             and status = 1 and presence =1
-                            order by  input_date   
+                            order by  input_date DESC 
+                          
                             ");
                             $list = $list->result_array();
                         } else {
@@ -58,61 +25,63 @@ defined('BASEPATH') or exit('No direct script access allowed');
                             FROM cms_content  
                             WHERE id_pages = 11648
                             and status = 1 and presence =1
-                            order by  input_date DESC limit  " . ($getPages - 1) * $max . ", $max
+                            order by  input_date DESC limit 0,4
                             ");
                             $list = $list->result_array();
                         }
 
 
-                        foreach ($list as $row) {
-                            $status = $row['status'];
-                            if ($core['login'] == true) $status = 1;
-                            if ($status == 1) {
                         ?>
-                                <div class="col-12 mb-4 pb-2">
-                                    <div class="card blog rounded border-0 shadow overflow-hidden">
-                                        <div class="row align-items-center g-0">
-                                            <div class="col-md-5">
-                                                <img src="<?php echo $row['img'] ?>" width="100%" class="img-fluid" alt="Exaque <?php echo $row['img'] ?>">
-                                            </div>
+                        <table id="example" class="" style="width:100%">
+                            <thead style="display: none;">
+                                <tr>
+                                    <th>Name</th>
+                                </tr>
+                            </thead>
+                            <tbody>
 
-                                            <div class="col-md-7">
-                                                <div class=" px-3 content">
-                                                   
-                                                    <ul class="list-unstyled d-flex justify-content-between mt-4"> 
-                                                        <li class="list-inline-item date text-muted"><i class="uil uil-calendar-alt text-dark"></i> <?php echo $row['date'] ?></li>
-                                                    </ul>
-                                                    <h5><a href="<?php echo $row['href'] ?>" class="card-title title text-dark"><?php echo $row['name'] ?></a></h5>
-                                                    <p class="text-muted mb-0"><?php echo $this->core->substrwords(strip_tags($row['content']), 155); ?></p>
-                                                    <div class="post-meta d-flex justify-content-between mt-3">
-                                                        <a href="<?php echo $row['href'] ?>" class="text-muted readmore">Baca selengkapnya <i class="uil uil-angle-right-b align-middle"></i></a>
+                                <?php
+                                foreach ($list as $row) {
+                                    $status = $row['status'];
+                                    if ($core['login'] == true) $status = 1;
+
+                                    if ($status == 1) {
+
+                                ?> <tr>
+                                            <td>
+                                                <div class="col-12 mb-4 pb-2">
+                                                    <div class="card blog rounded border-0 shadow overflow-hidden">
+                                                        <div class="row align-items-center g-0">
+                                                            <div class="col-md-5">
+                                                                <img src="<?php echo $row['img'] ?>" width="100%" class="img-fluid" alt="Exaque <?php echo $row['img'] ?>">
+                                                            </div>
+
+                                                            <div class="col-md-7">
+                                                                <div class=" content px-3">
+                                                                    <!-- <div><?php echo $core['login'] ?  'Status : ' . $row['status'] : ""; ?></div> -->
+                                                                    <ul class="list-unstyled d-flex justify-content-between mt-4">
+
+                                                                        <li class="list-inline-item date text-muted"><i class="uil uil-calendar-alt text-dark"></i> <?php echo $row['date'] ?></li>
+                                                                    </ul>
+                                                                    <h5><a href="<?php echo $row['href'] ?>" class="card-title title text-dark"><?php echo $row['name'] ?></a></h5>
+                                                                    <p class="text-muted mb-0"><?php echo $this->core->substrwords(strip_tags($row['content']), 155); ?></p>
+                                                                    <div class="post-meta d-flex justify-content-between mt-3">
+                                                                        <a href="<?php echo $row['href'] ?>" class="text-muted readmore">Baca selengkapnya <i class="uil uil-angle-right-b align-middle"></i></a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <!--end col-->
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <!--end col-->
-                                        </div>
-                                    </div>
-                                </div>
-                        <?php }
-                        } ?>
+                                            </td>
+                                        </tr>
+                                <?php }
+                                } ?>
 
+                            </tbody>
+                        </table>
 
-
-                        <!-- PAGINATION START -->
-                        <div class="col-12">
-                            
-                            <ul class="pagination justify-content-center mb-0">
-                                <li class="page-item"><a class="page-link" href="<?php echo  $curr < 2 ? "javascript:void(0)" : base_url(); ?>berita?p=<?php echo  $curr - 1; ?>" aria-label="Previous">Sebelumnya</a></li>
-
-                                <?php for ($i = 1; $i <= ceil($total / $max); $i++) { ?>
-                                    <li class="page-item <?php echo $curr == $i ? "active" : "" ?>"><a class="page-link" href="<?php echo base_url(); ?>berita?p=<?php echo $i; ?>"> <?php echo $i; ?> </a></li>
-                                <?php } ?>
-
-                                <li class="page-item"><a class="page-link" href="<?php echo  $curr >= ceil($total / $max) ? "javascript:void(0)" : base_url(); ?>berita?p=<?php echo  $curr + 1; ?>" aria-label="Next">Berikutnya</a></li>
-                            </ul>
-                        </div>
-                        <!--end col-->
-                        <!-- PAGINATION END -->
                     </div>
 
 

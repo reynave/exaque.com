@@ -1,6 +1,6 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
-?> 
+?>
 <section class="bg-half-170 d-table w-100 text-white" style="background: url('<?php echo $custom['penghitungBanner'][0]['img']; ?>');background-size: cover;background-position-y: 44px;">
     <div class="container">
         <div class="row align-items-center">
@@ -14,7 +14,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                     </div>
                 </div>
             </div>
-          
+
         </div>
         <!--end row-->
     </div>
@@ -45,28 +45,29 @@ defined('BASEPATH') or exit('No direct script access allowed');
             </div>
             <div class="col-md-8 col-12">
                 <div class="ms-lg-4">
-                    <div class="section-title"> 
+                    <div class="section-title">
                         <div class="text-muted fnRichtext" <?php echo $core['content']['data']['content'] ?>><?php echo $core['content']['content'] ?></div>
                         <div> <?php echo $core['content']['id'] ?  $core['content']['edit'] : $core['content']['insert']; ?></div>
                     </div>
                 </div>
             </div>
             <div class="col-md-4 col-12">
-                <img src="<?php echo $core['content']['img'] ?>" class="img-fluid my-3"  alt="Exaque <?php echo $core['content']['name'] ?>" width="100%">
+                <img src="<?php echo $core['content']['img'] ?>" class="img-fluid my-3" alt="Exaque <?php echo $core['content']['name'] ?>" width="100%">
             </div>
-            
+
         </div>
     </div>
 </section>
 
 <style>
-                .haha {
-                    height: 171px;
-                }
-                .font-sm{
-                    font-size: 14px;
-                }
-            </style> 
+    .haha {
+        height: 171px;
+    }
+
+    .font-sm {
+        font-size: 14px;
+    }
+</style>
 
 <section class="section ">
     <div class="container  py-2">
@@ -139,10 +140,10 @@ $row = $custom['penghitungDark'][0];
                     <img src="<?php echo $row['img'] ?>" class="img-fluid" alt="exaque">
                 </div>
                 <div class="col-md-7 mt-4 pt-2 mt-sm-0 pt-sm-0 col-12 order-2 order-lg-<?php echo $i % 2 == 1 ? "2" : "1" ?>">
-                    <div class="ms-lg-4"> 
+                    <div class="ms-lg-4">
                         <div class="section-title">
                             <h5 class="penghitungHeader mb-4 fnText" <?php echo $row['data']['h1'] ?>><?php echo $row['h1'] ?></h5>
-                            <div class="text-muted fnText" <?php echo $row['data']['content'] ?>><?php echo $row['content'] ?></div> 
+                            <div class="text-muted fnText" <?php echo $row['data']['content'] ?>><?php echo $row['content'] ?></div>
                             <div> <?php echo $row['modal'] ?></div>
                         </div>
                     </div>
@@ -159,11 +160,10 @@ $row = $custom['penghitungDark'][0];
 
     <div class="container my-3 ">
         <div class="row no-gutters">
-            <div class="col-1">
-                <img src="<?php echo base_url() ?>assets/gif/hug.gif" width="100%">
-
+            <div class="col-md-1 col-3 mb-3">
+                <img src="<?php echo base_url() ?>assets/gif/hug.gif" width="100%"> 
             </div>
-            <div class="col-11">
+            <div class="col-md-11 col-12">
                 <?php foreach ($bodyFooterQmatic as $r) { ?>
                     <div class="row">
 
@@ -177,7 +177,7 @@ $row = $custom['penghitungDark'][0];
                         </div>
 
                         <div class="col-12 col-md-3 text-center">
-                            <a href="<?php echo $r['href']; ?>" class="btn btn-sm btn-primary">Permohonan Demo</a>
+                            <a href="<?php echo $r['href']; ?>" class="btn  btn-outline-primary">Permohonan Demo</a>
                         </div>
 
                     </div>

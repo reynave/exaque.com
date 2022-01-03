@@ -5,7 +5,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 <section class="d-table w-100 text-white" style="background: url('<?php echo $custom['ritelBanner'][0]['img']; ?>');background-size: cover; padding:150px 0px 70px 0px">
     <div class="container">
         <div class="row align-items-center">
-            <div class="col-12 ">
+            <div class="col-12 col-lg-6 ">
                 <div class="title-heading mt-4">
                     <h1 class="heading mb-3 fnText" <?php echo $custom['ritelBanner'][0]['data']['h1']; ?>><?php echo $custom['ritelBanner'][0]['h1']; ?></h1>
                     <h3 class="fnText" <?php echo $custom['ritelBanner'][0]['data']['content']; ?>> <?php echo $custom['ritelBanner'][0]['content']; ?></h3>
@@ -93,12 +93,12 @@ defined('BASEPATH') or exit('No direct script access allowed');
     ?>
         <div class="container my-4 ">
             <div class="row">
-                <div class="col-6 text-justify order-2 order-md-<?php echo $i % 2 == 1 ? "1" : "2" ?>">
+                <div class="col-12 col-md-6 text-justify order-2 order-md-<?php echo $i % 2 == 1 ? "1" : "2" ?>">
 
                     <div class="fnRichtext" <?php echo $r['data']['content']; ?>><?php echo $r['content']; ?> </div>
                     <?php echo $r['modal']; ?>
                 </div>
-                <div class="col-6 text-center order-1 order-md-<?php echo $i % 2 == 1 ? "2" : "1" ?>">
+                <div class="col-12 col-md-6 text-center order-1 order-md-<?php echo $i % 2 == 1 ? "2" : "1" ?>">
                     <img src="<?php echo $r['img']; ?>" class="img-fluid" alt="exaque">
                 </div>
             </div>

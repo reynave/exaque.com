@@ -123,10 +123,10 @@ defined('BASEPATH') or exit('No direct script access allowed');
         <div class="row">
 
             <?php   foreach($custom['mw3'] as $row){ ?>
-            <div class="col-6 my-1">
+            <div class="col-md-6 col-12 my-1">
                 <div class="ms-lg-4">
                     <div class="row">
-                        <div class="col-12 col-md-3"><img src="<?php echo $row['img']?>" width="100%"></div>
+                        <div class="col-6 offset-3 offset-sm-0 col-md-3"><img src="<?php echo $row['img']?>" width="100%"></div>
                         <div class="col-12 col-md-9">
                             <h4 class="fnText" <?php echo $row['data']['h1']?>><?php echo $row['h1']?></h4>
                             <div class="fnRichtext" <?php echo $row['data']['content']?>><?php echo $row['content']?></div>

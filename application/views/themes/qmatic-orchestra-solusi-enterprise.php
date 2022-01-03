@@ -112,7 +112,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 </section>
 
 
-<section class="section ">
+<section class="section  bg-light">
     <?php $a = $custom['qeW3'][0]; ?>
     <div class="container my-3 py-5">
         <div class="row " id="">
@@ -123,9 +123,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                         <div class="fnRichtext" <?php echo $a['data']['content']; ?>>
                             <?php echo $a['content']; ?>
                         </div>
-                        <div style="text-align: right;">
-                            <a href="<?php echo $a['href']; ?>" class="btn btn-outline-primary text-right">Permohonan Demo Gratis</a>
-                        </div>
+                       
                     </div>
 
 
@@ -391,11 +389,11 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
     <div class="container my-3 ">
         <div class="row no-gutters">
-            <div class="col-1">
+            <div class="col-md-1 col-3 mb-3">
                 <img src="<?php echo base_url() ?>assets/gif/hug.gif" width="100%">
 
             </div>
-            <div class="col-11">
+            <div class="col-md-11 col-12">
                 <?php foreach ($bodyFooterQmatic as $r) { ?>
                     <div class="row">
 

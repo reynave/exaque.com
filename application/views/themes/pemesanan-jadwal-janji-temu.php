@@ -3,13 +3,13 @@ defined('BASEPATH') or exit('No direct script access allowed');
 ?>
 <!-- Hero Start -->
 <section class="bg-half-170 d-table w-100" style="background: url('<?php echo $custom['jjjBanner'][0]['img']; ?>');background-size: cover;background-position-x: -121px;">
-   
+
     <div class="container">
         <div class="row mt-5 justify-content-center">
             <div class="col-lg-12 text-center">
                 <div class="pages-heading title-heading">
-                    <h1 class="text-white   fnText" <?php echo $custom['jjjBanner'][0]['data']['h1']; ?>> <?php echo $custom['jjjBanner'][0]['h1']; ?> </h1> 
-                    <h3 class="fnText text-white" <?php echo $custom['jjjBanner'][0]['data']['content']; ?>> <?php echo $custom['jjjBanner'][0]['content']; ?></h3> 
+                    <h1 class="text-white   fnText" <?php echo $custom['jjjBanner'][0]['data']['h1']; ?>> <?php echo $custom['jjjBanner'][0]['h1']; ?> </h1>
+                    <h3 class="fnText text-white" <?php echo $custom['jjjBanner'][0]['data']['content']; ?>> <?php echo $custom['jjjBanner'][0]['content']; ?></h3>
                     <?php echo $custom['jjjBanner'][0]['modal']; ?>
                 </div>
             </div>
@@ -58,7 +58,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
             <div class="row">
                 <div class="col-12 col-md-6 order-2 order-md-<?php echo $i % 2 == 1 ? "1" : "2" ?>">
-                  
+
                     <div class="fnRichtext" <?php echo $row['data']['content']; ?>><?php echo $row['content']; ?></div>
                     <?php echo $row['modal']; ?>
                 </div>
@@ -93,17 +93,17 @@ defined('BASEPATH') or exit('No direct script access allowed');
     </div>
 
 
-    <div class="container my-3 "> 
+    <div class="container my-3 ">
         <div class="row">
-            <?php foreach($custom['jjjBenefit'] as $row ){?>
-            <div class="col-12 col-md-6 mb-4 ">
-                <h4 class="fnText" <?php echo $row['data']['h1']; ?>><?php echo $row['h1']; ?></h4> 
-                <div class="fnRichtext" <?php echo $row['data']['content']; ?>><?php echo $row['content']; ?></div> 
-            </div>
+            <?php foreach ($custom['jjjBenefit'] as $row) { ?>
+                <div class="col-12 col-md-6 mb-4 ">
+                    <h4 class="fnText" <?php echo $row['data']['h1']; ?>><?php echo $row['h1']; ?></h4>
+                    <div class="fnRichtext" <?php echo $row['data']['content']; ?>><?php echo $row['content']; ?></div>
+                </div>
             <?php } ?>
 
             <div class="col-12">
-                <?php echo $custom['jjjBenefitBtn']?>
+                <?php echo $custom['jjjBenefitBtn'] ?>
             </div>
         </div>
 
@@ -112,16 +112,16 @@ defined('BASEPATH') or exit('No direct script access allowed');
 </section>
 
 
- 
 
- 
+
+
 <section class="section bg-light">
     <div class="container my-3 ">
         <div class="row no-gutters">
-            <div class="col-1">
+            <div class="col-md-1 col-3">
                 <img src="<?php echo base_url() ?>assets/gif/hug.gif" width="100%">
             </div>
-            <div class="col-11">
+            <div class="col-md-11 col-12">
                 <?php foreach ($bodyFooter as $r) { ?>
                     <div class="row">
                         <div class="col-12 col-md-8">
