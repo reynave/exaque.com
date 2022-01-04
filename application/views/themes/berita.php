@@ -18,7 +18,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
     FROM cms_content  
     WHERE id_pages = 11648 and YEAR(input_date) = " . $this->input->get('year') . " 
     and status = 1 and presence =1
-    order by  input_date   
+    order by  input_date   DESC
     ");
                             $total = count($tt->result_array());
                         } else {
@@ -27,7 +27,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
     FROM cms_content  
     WHERE id_pages = 11648
     and status = 1 and presence =1
-    order by  input_date   
+    order by  input_date   DESC
     ");
                             $total = count($tt->result_array());
                         }
@@ -50,7 +50,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                             FROM cms_content  
                             WHERE id_pages = 11648 and YEAR(input_date) = " . $this->input->get('year') . " 
                             and status = 1 and presence =1
-                            order by  input_date   
+                            order by  input_date   DESC
                             ");
                             $list = $list->result_array();
                         } else {

@@ -196,7 +196,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
                                         <!-- <img src="<?php echo $rec['img']; ?>" class="avatar avatar-small rounded" style="width: auto;" alt=""> -->
                                         <div class="flex-1 ms-3 mb-3 small-news">
                                             <a href="<?php echo base_url() . $rec['url']; ?>" class="d-block title text-dark"><?php echo $rec['name']; ?></a>
-                                            <div><small class="text-muted">15th April 2021</small></div>
+                                            <div><small class="text-muted"><?php echo date("d M Y", strtotime($rec['input_date'])); ?></small></div>
+                                            
                                         </div>
                                     </div>
 

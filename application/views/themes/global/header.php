@@ -85,9 +85,15 @@ defined('BASEPATH') or exit('No direct script access allowed');
         <!-- Navigation Menu-->
         <ul class="navigation-menu">
           <?php foreach ($core['navigation'] as $row) {
-            if ($row['idefault'] != "1") {
+            if ($row['idefault'] != "1") { 
+
+              $idParent = $core['pages']['id'];
+ 
+              if((int)$this->core->select("id_pages","cms_pages","id='".$core['pages']['id']."'")  > 0) {
+                $idParent = $this->core->select("id_pages","cms_pages","id='".$core['pages']['id']."'");
+              }
           ?>
-              <li class="has-submenu parent-parent-menu-item">
+              <li class="has-submenu parent-parent-menu-item <?php echo $row['id'] == $idParent ? "active":"";?>">
                 <a href="javascript:void(0)"><?php echo $row['name'] ?></a>
                 <?php if ($row['level2']) { ?>
                   <span class="menu-arrow"></span>
@@ -101,7 +107,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                     <?php } ?>
 
                     <?php foreach ($row['level2'] as $row2) { ?>
-                      <li class="has-submenu parent-menu-item"><a href="<?php echo !$row2['level3'] ? $row2['href']:"javascript:void(0)";?>"> <?php echo $row2['name'] ?> </a>
+                      <li class="has-submenu parent-menu-item "><a href="<?php echo !$row2['level3'] ? $row2['href']:"javascript:void(0)";?>"> <?php echo $row2['name'] ?> </a>
                         <?php if ($row2['level3']) { ?>
                           <span class="submenu-arrow"></span>
                           <ul class="submenu">

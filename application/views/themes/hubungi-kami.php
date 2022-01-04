@@ -6,8 +6,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
         width: 100% !important;
     }
-    .card-body{
-        background: rgb( 245,248,250);
+
+    .card-body {
+        background: rgb(245, 248, 250);
     }
 </style>
 <!-- Start -->
@@ -25,8 +26,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
                 <?php if ($core['content']['id'] == '311') { ?>
                     <div class="card shadow rounded border-0 mt-5 " id="commentForm2">
-                        <div class="card-body ">
-                          
+                        <div class="card-body myForm">
+
                             <div class="custom-form">
 
                                 <form <?php echo $core['contact_us']['action'] ?> name="myForm">
@@ -127,6 +128,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
                                         </div>
                                     </div>
                                     <div class="row">
+                                        <div class="col-12 mb-2">
+                                            <span class="textwarning text-warning"></span>
+                                        </div>
                                         <div class="col-12">
                                             <div class="text-center">
                                                 <button class="btn btn-exa2  fnSubmit" id="submit" name="send" type="button">Kirim Pesan</button>
@@ -137,15 +141,21 @@ defined('BASEPATH') or exit('No direct script access allowed');
                                     <!--end row-->
 
                                 </form>
+
+
                             </div>
+
+
                         </div>
+
+
                     </div>
                 <?php }
 
                 if ($core['content']['id'] == '310') { ?>
                     <div class="card shadow rounded border-0 mt-5 " id="commentForm3">
-                        <div class="card-body ">
-                       
+                        <div class="card-body myForm">
+
                             <div class="custom-form ">
 
                                 <form <?php echo $core['contact_us']['action'] ?> name="myForm">
@@ -229,8 +239,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
                                         <div class="col-12">
                                             <div class="mb-3">
-                                                <label for="provinsi">Provinsi</label> 
+                                                <label for="provinsi">Provinsi</label>
                                                 <select class="form-control" id="provinsi" placeholder="provinsi*" name="provinsi" required>
+
                                                     <option value="ACEH"> ACEH </option>
                                                     <option value="SUMATERA UTAR"> SUMATERA UTARA </option>
                                                     <option value="SUMATERA BARAT"> SUMATERA BARAT </option>
@@ -277,7 +288,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                                                 <label for="how">Pesan</label>
                                                 <textarea class="form-control" id="how" rows="5" name="pesan" placeholder=" Jelaskan masalah Anda dan tim teknis kami akan segera menghubungi Anda kembali." required></textarea>
                                                 <div class="invalid-feedback" id="ehow">
-                                                   Jelaskan masalah Anda dan tim teknis kami akan segera menghubungi Anda kembali.
+                                                    Jelaskan masalah Anda dan tim teknis kami akan segera menghubungi Anda kembali.
                                                 </div>
                                             </div>
                                         </div>
@@ -295,15 +306,23 @@ defined('BASEPATH') or exit('No direct script access allowed');
                                 </form>
                             </div>
                         </div>
+
                     </div>
                 <?php } ?>
 
 
-                <div class="card shadow rounded border-0 mt-5 " id="commentFormSuccess">
-                    <div class="card-body py-5">
-                        <p><b> Terima kasih sudah menghubungi kami</b> </p>
+
+                <div class="exabox1" style="display: none;">
+                    <div>
+                        <p>
+                            <strong>
+                            Terima kasih telah mengisi formulir kami. Salah satu dari Tim Exaque akan segera menghubungi Anda.
+                            </strong>
+                        </p>
                     </div>
                 </div>
+
+
             </div>
 
             <div class="col-lg-4 col-md-4 col-12">
@@ -311,22 +330,22 @@ defined('BASEPATH') or exit('No direct script access allowed');
                     <div class="px-3 pt-3">
                         <div class="fnText text-primary pb-2" <?php echo $custom['hubTitle']['attributes']; ?>> <?php echo $custom['hubTitle']['content']; ?> </div>
                     </div>
-                   
+
 
                     <?php foreach ($core['content']['list'] as $row) { ?>
-                    <div class="blocklist <?php echo $row['id'] == $core['content']['id'] ? "active":""?>">
-                        <a href="<?php echo $row['href'] ?>"><?php echo $row['name'] ?></a>
-                        <div class="arrow1"> 
+                        <div class="blocklist <?php echo $row['id'] == $core['content']['id'] ? "active" : "" ?>">
+                            <a href="<?php echo $row['href'] ?>"><?php echo $row['name'] ?></a>
+                            <div class="arrow1">
+                            </div>
+                            <?php echo $row['action']; ?>
                         </div>
-                        <?php echo $row['action']; ?>
-                    </div>
                     <?php } ?>
 
-                  
+
                 </div>
 
                 <div>
-                <?php echo $core['content']['insert']; ?>
+                    <?php echo $core['content']['insert']; ?>
                 </div>
             </div>
         </div>

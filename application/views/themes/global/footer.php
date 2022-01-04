@@ -47,7 +47,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
                         <div class="col-lg-3 col-12 ">
                             <div class="footerRight">
-                                <span class="ficons"><a href="https://www.youtube.com/channel/ UCXXDuhPvK3JlgJ4kiIIFvLQ" target="_blank" class="rounded"><i data-feather="youtube" class="fea icon-md fea-social"></i></a></span>
+                                <span class="ficons"><a href="https://www.youtube.com/channel/UCXXDuhPvK3JlgJ4kiIIFvLQ" target="_blank" class="rounded"><i data-feather="youtube" class="fea icon-md fea-social"></i></a></span>
 
                                 <span class="ficons"><a href="https://www.linkedin.com/company/exaquemm/" target="_blank" class="rounded"><i data-feather="linkedin" class="fea icon-md  fea-social"></i></a> </span>
                             </div>
@@ -132,8 +132,10 @@ defined('BASEPATH') or exit('No direct script access allowed');
             iframe.src = iframe.src;
         });
 
-        $(".fnSubmit").on('click', function() {
 
+
+        $(".fnSubmit").on('click', function() {
+              error = false;
             const data = {
                 first_name: $('#c1').val(),
                 last_name: $('#c2').val(),
@@ -141,44 +143,51 @@ defined('BASEPATH') or exit('No direct script access allowed');
                 perusahaan: $('#c3').val(),
                 jabatan: $('#jab').val(),
                 telp: $('#telp').val(),
-                who: $('#who').val(),
-                how: $('#how').val(),
+                apa_yang_paling_tepat_menggambarkan_anda : $('#who').val(),
+                bagaimana_kami_dapat_membantu_anda : $('#how').val(),
                 gchapta: $('#g-recaptcha-response').val(),
             }
             console.log(data);
             $('.invalid-feedback').hide();
             if (!data['first_name']) {
                 $('#e1').show();
+                error = true;
             }
             if (!data['last_name']) {
                 $('#e2').show();
+                error = true;
             }
             if (!data['email']) {
                 $('#e12').show();
+                error = true;
             }
             if (!data['perusahaan']) {
                 $('#e3').show();
+                error = true;
             }
             if (!data['jabatan']) {
                 $('#ejab').show();
+                error = true;
             }
             if (!data['telp']) {
                 $('#etelp').show();
+                error = true;
             }
-            if (!data['who']) {
+            if (!data['apa_yang_paling_tepat_menggambarkan_anda']) {
                 $('#ewho').show();
+                error = true;
             }
-            if (!data['who']) {
-                $('#ewho').show();
-            }
-            if (!data['how']) {
+            if (!data['bagaimana_kami_dapat_membantu_anda']) {
                 $('#ehow').show();
-            } else {
-                if (data['gchapta']) {
+                error = true;
+            }
 
+            if (error == false) {
+                if (data['gchapta']) {
+                    $('.invalid-feedback').hide();
                     $.ajax({
                         type: "POST",
-                        url: '<?php echo base_url(); ?>site/form/',
+                        url: '<?php echo base_url(); ?>site/form/sales',
                         data: data,
                         dataType: "json",
                         beforeSend: function(data) {
@@ -186,80 +195,104 @@ defined('BASEPATH') or exit('No direct script access allowed');
                         },
                         success: function(data) {
                             console.log(data)
-                            $('#commentForm').hide();
-                            $('#commentFormSuccess').show();
 
+                            $('.myForm').hide();
+                            $('.exabox1').show();
                         },
                         error: function(data) {
-                            console.log(data);
+                            console.log(data.responseText);
                             alert("Google Chapta berakhir, silakan ulangin lagi.");
                             location.reload();
                         }
 
                     });
                 } else {
-
                     alert("Google Chapta berakhir, silakan ulangin lagi.");
                     location.reload();
                 }
 
+            } else {
+
+                $('.textwarning').html("Semua kolom wajib dilengkapi");
             }
 
 
         });
 
         $(".fnSubmit2").on('click', function() {
-
+              error = false;
             const data = {
-                first_name: $('#c1').val(),
-                last_name: $('#c2').val(),
+                nama_depan: $('#c1').val(),
+                nama_belakang: $('#c2').val(),
                 email: $('#c12').val(),
-                perusahaan: $('#c3').val(),
-                jabatan: $('#jab').val(),
+                perusahaan: $('#c3').val(), 
                 alamat: $('#alamat').val(),
                 kota: $('#kota').val(),
                 telp: $('#telp').val(),
                 provinsi: $('#provinsi').val(),
-                how: $('#how').val(),
+                pesan: $('#how').val(),
                 gchapta: $('#g-recaptcha-response').val(),
             }
             console.log(data);
+            
+            console.log(error);
             $('.invalid-feedback').hide();
-            if (!data['first_name']) {
+            if (!data['nama_depan']) {
                 $('#e1').show();
+                error = true;
+                console.log(error);
             }
-            if (!data['last_name']) {
+            if (!data['nama_belakang']) {
                 $('#e2').show();
+                error = true;
+                console.log(error);
             }
             if (!data['email']) {
                 $('#e12').show();
+                error = true;
+                console.log(error);
             }
             if (!data['perusahaan']) {
                 $('#e3').show();
+                error = true;
+                console.log(error);
             }
-            if (!data['jabatan']) {
-                $('#ejab').show();
-            }
+           
             if (!data['alamat']) {
                 $('#ealamat').show();
+                error = true;
+                console.log(error);
+            }  
+            if (!data['provinsi']) {
+                $('#eprovinsi').show();
+                error = true;
+                console.log(error);
             }
             if (!data['telp']) {
                 $('#etelp').show();
+                error = true;
+                console.log(error);
             }
             if (!data['kota']) {
                 $('#ekota').show();
-            }
-            if (!data['who']) {
-                $('#ewho').show();
-            }
-            if (!data['how']) {
+                error = true;
+                console.log(error);
+            } 
+            if (!data['pesan']) {
                 $('#ehow').show();
-            } else {
-                if (data['gchapta']) {
+                error = true; 
+                console.log(error);
+                
+            }
 
+           
+            if (error == false) {
+                if (data['gchapta']) { 
+                   
+                    $('.invalid-feedback').hide();
                     $.ajax({
                         type: "POST",
-                        url: '<?php echo base_url(); ?>site/form/',
+                        url: '<?php echo base_url(); ?>site/form/helpdesk',
                         data: data,
                         dataType: "json",
                         beforeSend: function(data) {
@@ -267,43 +300,43 @@ defined('BASEPATH') or exit('No direct script access allowed');
                         },
                         success: function(data) {
                             console.log(data)
-                            $('#commentForm').hide();
-                            $('#commentFormSuccess').show();
 
+                            $('.myForm').hide();
+                            $('.exabox1').show();
                         },
                         error: function(data) {
-                            console.log(data);
+                            console.log(data.responseText);
                             alert("Google Chapta berakhir, silakan ulangin lagi.");
                             location.reload();
                         }
 
                     });
                 } else {
-
                     alert("Google Chapta berakhir, silakan ulangin lagi.");
                     location.reload();
                 }
+
+            } else {
+
+
+                $('.textwarning').html("Semua kolom wajib dilengkapi");
 
             }
 
 
         });
 
-        $('.anchor').on('click',function(){ 
+        $('.anchor').on('click', function() {
             $('.blocklist').removeClass('active');
-            
-            $('.b'+$(this).data("id")).addClass('active');
+
+            $('.b' + $(this).data("id")).addClass('active');
         });
 
-        if(window.location.hash) {
+        if (window.location.hash) {
             console.log(window.location.hash);
         }
-      
-    });
 
-   
-   
-  
+    });
 </script>
 
 </body>

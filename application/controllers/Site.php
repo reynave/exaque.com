@@ -76,13 +76,10 @@ class Site extends CI_Controller
     // for CMS send email at  "Hubungi kami";
     public function send()
     {
-
-
-
+ 
         $subject = $this->email_subject;
         $secret_key = $this->secret_key;
-
-
+ 
         $message = "";
         foreach ($this->input->post() as $name => $value) {
             if ($name != "return" && $name != "g-recaptcha-response") {
@@ -139,19 +136,18 @@ class Site extends CI_Controller
     }
 
      // for CMS send email at  "Hubungi kami";
-     public function form()
+     public function form($type="")
      {
  
          header('Content-Type: application/javascript');
   
          $subject = $this->email_subject;
-         $secret_key = $this->secret_key;
+         $secret_key = $this->secret_key; 
+         $post =  $this->input->post() ;
  
- 
-         $post = json_decode(file_get_contents('php://input'));
          $message = "";
          foreach ($post as $name => $value) {
-             if ($name != "return" && $name != "g-recaptcha-response") {
+             if ($name != "return" && $name != "gchapta") {
                  $message .= $name . ' : ' . $value . "\n";
              }
          }
@@ -174,19 +170,27 @@ class Site extends CI_Controller
          $to     = $this->core->select('value', 'global_setting', 'id=105');
          //$to     = 'felix@cuvox.de';
  
-         $captcha = $_POST['g-recaptcha-response'];
+         $captcha = $post['gchapta'];
  
  
          $error = 'wrong captcha';
          if ($captcha != '') {
- 
+            $error = 400;
              $url = 'https://www.google.com/recaptcha/api/siteverify?secret=' . urlencode($secret_key) . '&response=' . $captcha;
              $recaptcha = file_get_contents($url);
              $responseData  = json_decode($recaptcha, true);
              if ($responseData['success']) {
                  $this->email->from($email);
-                 $this->email->to($to);
-                 $this->email->subject($subject);
+               
+                 if($type == "sales"){
+                    $this->email->to("sales@exaque.com");
+                    $this->email->subject("Request Exaque - Saya ingin berbicara dengan sales");
+                 }
+                 else if($type == "helpdesk"){
+                    $this->email->to("helpdesk@exaque.com");
+                    $this->email->subject("Request Exaque - Saya butuh dukungan teknis"); 
+                 }
+               
                  $this->email->message($message);
                  if ($this->email->send()) {
                     $error = 0;
@@ -195,14 +199,16 @@ class Site extends CI_Controller
                  }
                  $error = 0;
              }
-             $error = 400;
+           
          }
          // DOC error https://www.restapitutorial.com/httpstatuscodes.html
         $obj = [
               "error" => $error,
+              "post" => $post,
+              "recaptcha" => $recaptcha,
           ];
 
-         return json_encode($obj);
+        echo json_encode($obj);
   
      }
 }
