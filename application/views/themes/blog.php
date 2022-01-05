@@ -19,7 +19,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                     <div class="row">
                         <?php
   $pages = "  ";
-  $max = 16;
+  $max = 10;
   $q =   $this->db->query("SELECT id FROM cms_pages WHERE id_pages = " . $core['pages']['id'] . " order by sorting ASC");
   $i = 1;
   foreach ($q->result_array() as $rec) {
@@ -92,15 +92,35 @@ defined('BASEPATH') or exit('No direct script access allowed');
                         <!-- PAGINATION START -->
                         <div class="col-12">
 
-                            <ul class="pagination justify-content-center mb-0">
-                                <li class="page-item"><a class="page-link" href="<?php echo  $curr < 2 ? "javascript:void(0)" : base_url();  
-                                echo $core['segment']['s1'];  ?>?p=<?php echo  $curr - 1; ?>" aria-label="Previous">Sebelumnya</a></li>
+                            <ul class="pagination justify-content-center mb-0"> 
+                                <li class="page-item  d-none d-sm-block"><a class="page-link" href="<?php echo  $curr < 2 ? "javascript:void(0)" : base_url();  
+                                echo $core['segment']['s1'];  ?>?p=<?php echo  $curr - 1; ?>" aria-label="Previous">Sebelumnya</a></li> 
+                              
+                              <li class="page-item <?php echo $curr == $i ? "active" : "" ?>"><a class="page-link" href="<?php echo base_url();  echo $core['segment']['s1'];?>?p=1">1</a></li>  
+                              <?php 
+                                if($i < $curr -1  &&  $curr > 1){   
+                                    echo ' <li class="page-item "><span class="px-3">...</span></li>  ';  
+                                }
+                                ?>
 
-                                <?php for ($i = 1; $i <= ceil($total / $max); $i++) { ?>
-                                    <li class="page-item <?php echo $curr == $i ? "active" : "" ?>"><a class="page-link" href="<?php echo base_url();  echo $core['segment']['s1'];?>?p=<?php echo $i; ?>"> <?php echo $i; ?> </a></li>
-                                <?php } ?>
+                                <?php for ($i = $curr - 1; $i <= ceil($total / $max) -1; $i++) { 
+                                    if( $i > 1){ 
+                                    ?>
+                                    <li class="page-item <?php echo $curr == $i ? "active" : "" ?>"><a class="page-link" href="<?php echo base_url();  echo $core['segment']['s1'];?>?p=<?php echo $i; ?>"> <?php echo $i; ?> </a></li>  
+                                <?php 
+                                    } 
+                                if($i > $curr+1 ){ 
+                                    $next = false;
+                                    echo ' <li class="page-item "><span class="px-3">...</span></li>  ';
+                                 
+                                    break;
+                                }
+                            } ?>
 
-                                <li class="page-item"><a class="page-link" href="<?php echo  $curr >= ceil($total / $max) ? "javascript:void(0)" : base_url();  echo $core['segment']['s1'];?>?p=<?php echo  $curr + 1; ?>" aria-label="Next">Berikutnya</a></li>
+                               
+ <li class="page-item <?php echo $curr == $i ? "active" : "" ?>"><a class="page-link " href="<?php echo base_url();  echo $core['segment']['s1'];?>?p=<?php echo ceil($total / $max); ?>"><?php echo ceil($total / $max); ?></a></li>  
+
+                                <li class="page-item d-none d-sm-block"><a class="page-link" href="<?php echo  $curr >= ceil($total / $max) ? "javascript:void(0)" : base_url();  echo $core['segment']['s1'];?>?p=<?php echo  $curr + 1; ?>" aria-label="Next">Berikutnya</a></li>
                             </ul>
                         </div>
                         <!--end col-->
